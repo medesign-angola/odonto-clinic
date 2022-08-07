@@ -1,0 +1,118 @@
+<div class="contain w-[90%] mx-auto py-20">
+    <div class="content flex flex-row">
+        <div class="left-content relative bg-green-00 flex flex-col bg-green-0 p-5">
+            <div class="title-section mb-5">
+                <h1 class="text-primary text-[25px]">Resultados</h1>
+            </div>
+            <div class="main-title mb-5">
+                <h1 class="text-secondary text-[44px] font-bold">Somos gratos por toda confiança que é depositada.</h1>
+            </div>
+            <div class="text-paragraph mb-5">
+                <p class="text-[18px]">
+                    Garantimos fatisfação e resultados para nossos pacientes, somando resultados excelente por cada mês.
+                </p>
+            </div>
+            <div class="statistics w-full flex gap-20 mb-5">
+                <div class="patients flex flex-col justify-center bg-red-0">
+                    <div class="large-number">
+                        <h1 class="text-[62px] text-primary font-bold text-center">+35</h1>
+                    </div>
+                    <div class="small-description">
+                        <p>Pacientes por mês</p>
+                    </div>
+                </div>
+                <div class="calls flex flex-col justify-center bg-red-0">
+                    <div class="large-number">
+                        <h1 class="text-[62px] text-primary font-bold text-center">+72</h1>
+                    </div>
+                    <div class="small-description">
+                        <p>Ligações por mês</p>
+                    </div>
+                </div>
+            </div>
+            <div class="all-results-panel">
+                <button class="contact-us bg-secondary py-3 px-5 my-7 flex gap-x-3 rounded-[4px]" (click)="this.toggleVisibility()">
+                    <div class="text text-white">
+                        <p class="text-[16px]">Ver todos os resultados</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="right-content relative bg-green-00 flex items-end justify-center">
+            <div class="images bg-orange-00">
+                <div class="image">
+                    <img src="assets/images/results/image1.jpg" alt="">
+                </div>
+                <div class="image">
+                    <img src="assets/images/results/image1.jpg" alt="">
+                </div>
+                <div class="image">
+                    <img src="assets/images/results/image1.jpg" alt="">
+                </div>
+                <div class="image">
+                    <img src="assets/images/results/image1.jpg" alt="">
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div class="all-results p-4 bg-orange-00">
+        <div class="boxes bg-red-00 mt-24 overflow-hidden" [ngClass]="{'show': this.showAllResults, 'hide': !this.showAllResults}">
+
+            <div class="box">
+                <img src="assets/images/results/image1.jpg" alt="">
+
+                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
+                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
+                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
+                    </div>
+                </section>
+            </div>
+            <div class="box">
+                <img src="assets/images/results/image1.jpg" alt="">
+
+                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
+                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
+                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
+                    </div>
+                </section>
+            </div>
+            <div class="box">
+                <img src="assets/images/results/image1.jpg" alt="">
+
+                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
+                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
+                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
+                    </div>
+                </section>
+            </div>
+            <div class="box">
+                <img src="assets/images/results/image1.jpg" alt="">
+
+                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
+                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
+                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
+                    </div>
+                </section>
+            </div>
+            <div class="box">
+                <img src="assets/images/results/image1.jpg" alt="">
+
+                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
+                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
+                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
+                    </div>
+                </section>
+            </div>
+            <div class="box">
+                <img src="assets/images/results/image1.jpg" alt="">
+
+                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
+                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
+                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</div>
