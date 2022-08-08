@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-specialities',
   templateUrl: './specialities.component.html',
   styleUrls: ['./specialities.component.css']
 })
-export class SpecialitiesComponent implements OnInit {
+export class SpecialitiesComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('slide') slideElement !: ElementRef;
 
   constructor() { }
 
@@ -14,6 +16,14 @@ export class SpecialitiesComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  ngAfterViewInit(): void {
+    
+  }
+
+  @HostListener('window:wheel', ['$event']) listening(){ 
+    console.log(window.pageXOffset);
   }
 
   prevClick(){
