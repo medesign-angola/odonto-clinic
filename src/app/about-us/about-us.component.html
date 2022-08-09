@@ -1,29 +1,29 @@
-<div class="contain w-[90%] mx-auto py-20">
-    <div class="content flex flex-row">
-        <div class="left-content flex flex-col justify-center bg-green-0 p-5">
+<div class="contain w-[90%] mx-auto mobile:py-16 desktop:py-20">
+    <div class="content flex mobile:flex-col desktop:flex-row">
+        <div class="left-content flex flex-col justify-center bg-green-00 mobile:p-0 desktop:p-5">
             <div class="title-section mb-5">
-                <h1 class="text-primary text-[25px]">Sobre Nós</h1>
+                <h1 class="text-primary mobile:text-[20px] mobile:text-center desktop:text-left desktop:text-[25px]">Sobre Nós</h1>
             </div>
-            <div class="main-title mb-10">
-                <h1 class="text-secondary text-[45px] font-bold">Moderna, com profissionais qualificados e eficácia nos atendimentos.</h1>
+            <div class="main-title mobile:mb-5 desktop:mb-10">
+                <h1 class="text-secondary mobile:text-[23px] mobile:text-center desktop:text-left desktop:text-[45px] font-bold">Moderna, com profissionais qualificados e eficácia nos atendimentos.</h1>
             </div>
-            <div class="text-paragraph mb-5">
-                <p class="text-[18px]">
+            <div class="text-paragraph mobile:mb-10 desktop:mb-5">
+                <p class=" mobile:text-center desktop:text-left mobile:text-[16px] desktop:text-[18px] opacity-[0.6]">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis orci, tortor, suspendisse nunc. Viverra neque mauris dictum
                     molestie vivamus feugiat. Est eu justo, nunc in amet. Quis est, ut diam, iaculis nec. Tincidunt nisl suspendisse in eros, amet. In
                     fermentum egestas adipiscing nunc.
                 </p>
             </div>
-            <div class="contact-panel">
+            <div class="contact-panel mobile:hidden desktop:block">
                 <app-contact-panel></app-contact-panel>
             </div>
         </div>
         <div class="right-content relative bg-green-0 flex justify-center">
-            <div class="image relative">
-                <img src="assets/images/about-us/image1.jpg" alt="">
+            <div class="image relative bg-fuchsia-00">
+                <img src="assets/images/about-us/image1.jpg" class=" rounded-[4px]" alt="">
             </div>
-            <div class="absolute bottom-[20%] -translate-y-[20%]">
-                <img src="assets/images/icons/smile-vector.svg" alt="">
+            <div class="absolute bottom-[20%]">
+                <img src="assets/images/icons/smile-vector.svg" class="mobile:w-[240px] desktop:w-auto mobile:h-[90px] desktop:h-auto" alt="">
             </div>
         </div>
     </div>

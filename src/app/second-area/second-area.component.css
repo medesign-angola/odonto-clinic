@@ -1,11 +1,15 @@
 .box{
-    padding: 1rem;
-    margin: 0 1rem;
+    /* padding: 1rem; */
+    /* margin: 0 1rem; */
     background-color: #fff;
     border-radius: 4px;
     width: 400px;
     height: 198px;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, .05);
     padding: 30px;
-    gap: 5;
+    gap: 1.25rem;
+}
+.contain{
+    max-width: 1536px;
+    margin: 0px auto;
 }

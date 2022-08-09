@@ -1,4 +1,4 @@
-<header class="bg-orange-0" #containHeader [ngClass]="{'is-scrolling': this.hasHeaderToChange}">
+<header class="bg-orange-0 mobile:hidden desktop:block" #containHeader [ngClass]="{'is-scrolling': this.hasHeaderToChange}">
   <div class="contain bg-slate-0">
     <nav class="flex justify-between items-center">
       <div class="logo" [innerHTML]="this.logoImage">
@@ -16,7 +16,21 @@
     </nav>
   </div>
 </header>
-<div class="fixed-social-media fixed z-[10]" [ngClass]="{'shown': !this.isSocialMediaHide, 'hide': this.isSocialMediaHide}">
+
+<header class="mobile mobile:block desktop:hidden">
+  <nav>
+    <div class="top-icons w-full bg-slate-0 flex justify-between items-center w-[90%] z-10 translate-x-[-50%] left-[50%] mt-0 absolute">
+      <div class="menu-hamburger">
+        <img src="assets/images/icons/menu-icon-hamburger.svg" alt="">
+      </div>
+      <div class="logo-menu-hidden">
+        <img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt="">
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="fixed-social-media mobile:hidden desktop:block fixed z-[10]" [ngClass]="{'shown': !this.isSocialMediaHide, 'hide': this.isSocialMediaHide}">
   <div class="box bg-secondary relative flex flex-col justify-center items-center px-2 py-7 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
     <div class="close p-2 bg-primary rounded-full absolute -left-[10px] -top-[10px] cursor-pointer" (click)="toggleSocialMediaBox()">
       <img src="assets/images/icons/close-fixed-box.svg" alt="">
@@ -26,36 +40,39 @@
   </div>
 </div>
 
-<div class="fixed-social-media arow p-0 fixed z-[10] flex items-center" [ngClass]="{'shown': this.isSocialMediaHide, 'hide': !this.isSocialMediaHide}">
+<div class="fixed-social-media mobile:hidden desktop:block arow p-0 fixed z-[10] flex items-center" [ngClass]="{'shown': this.isSocialMediaHide, 'hide': !this.isSocialMediaHide}">
   <div class="box bg-secondary relative flex flex-col justify-center items-center px-1 py-3 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
     <img src="assets/images/icons/social-media-box-arrow.svg" class="cursor-pointer" (click)="toggleSocialMediaBox()" alt="">
     <!-- <span class="font-bold text-white text-2xl cursor-pointer" (click)="toggleSocialMediaBox()"><</span> -->
   </div>
   <div class="lateral-bar bg-primary w-[12px] h-[151px]"></div>
 </div>
+
+
 <div class="banner relative bg-green-30 overflow-hidden" #home>
-  <app-banner></app-banner>
+  <app-banner class="mobile:hidden desktop:block"></app-banner>
+  <app-banner-mobile class="mobile:block desktop:hidden"></app-banner-mobile>
 </div>
-<div class="second-boxes relative bg-green-40 py-20">
+<div class="second-boxes relative bg-green-40 py-10">
   <app-second-area></app-second-area>
 </div>
 <div class="about bg-green-5000" #about>
   <app-about-us></app-about-us>
 </div>
 <div class="specialities bg-green-00" #specialities>
-  <app-specialities></app-specialities>
+  <!-- <app-specialities></app-specialities> -->
 </div>
 <div class="contacts bg-green-00" #contact>
-  <app-contact-us></app-contact-us>
+  <!-- <app-contact-us></app-contact-us> -->
 </div>
 <div class="results bg-green-00" #results>
-  <app-results></app-results>
+  <!-- <app-results></app-results> -->
 </div>
 
-<footer class="bg-secondary relative py-20 px-10">
+<!-- <footer class="bg-secondary relative py-20 px-10">
   <div class="background absolute top-0 left-0 w-full h-full z-[1]"></div>
 
-  <div class="content relative w-[90%] mx-auto z-[2] bg-red-00 mb-10 flex justify-between items-start">
+  <div class="content contain relative w-[90%] mx-auto z-[2] bg-red-00 mb-10 flex justify-between items-start">
 
     <div class="about flex flex-col">
       <div class="logo-desc mb-7">
@@ -109,4 +126,4 @@
     <p class="text-white">&copy; 2022 - Odonto Clinic. Todos os direitos reservados.</p>
   </div>
   
-</footer>
+</footer> -->

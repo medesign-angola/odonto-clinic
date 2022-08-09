@@ -4,15 +4,26 @@ div.slide img{
     width: 100%;
     object-fit: cover;
 }
+.background{
+    /* max-width: 1536px;
+    margin: 0px auto;
+    left: 50%;
+    transform: translateX(-50%); */
+}
 .all-slide-images{
     position: relative;
     white-space: nowrap;
+    /* max-height: 1000px; */
 }
 .all-slide-images > div{
     white-space: normal;
     display: inline-block;
     position: absolute;
 }
+/* .slide{
+    max-width: 1536px;
+    margin: 0px auto;
+} */
 .slide.past-one,
 .slide.past-two,
 .slide.past-three,

@@ -2,6 +2,10 @@
     width: 50%;
     height: 700px;
 }
+.contain{
+    max-width: 1536px;
+    margin: 0px auto;
+}
 .right-content{}
 .right-content .image{
     width: 440px;

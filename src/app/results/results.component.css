@@ -2,6 +2,11 @@
     width: 50%;
     height: 540px;
 }
+
+.contain{
+    max-width: 1536px;
+    margin: 0px auto;
+}
 .right-content{}
 .right-content .images{
     width: 74%;
