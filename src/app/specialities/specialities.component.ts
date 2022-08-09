@@ -3,7 +3,7 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild }
 @Component({
   selector: 'app-specialities',
   templateUrl: './specialities.component.html',
-  styleUrls: ['./specialities.component.css']
+  styleUrls: ['./specialities.component.css', './specialities.component.resp.css']
 })
 export class SpecialitiesComponent implements OnInit, AfterViewInit {
 
@@ -23,7 +23,7 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('window:wheel', ['$event']) listening(){ 
-    console.log(window.pageXOffset);
+    // console.log(this.slideElement.nativeElement.);
   }
 
   prevClick(){

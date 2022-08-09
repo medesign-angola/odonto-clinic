@@ -1,0 +1,14 @@
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+    footer .content{
+        /* height: max-content; */
+        /* height: 150px; */
+    }
+    footer .content > div{
+        width: 100%;
+        /* height: auto; */
+    }
+    .copyrights::after{
+        content: '';
+        display: none;
+    }
+}

@@ -1,36 +1,36 @@
-<div class="contain w-[90%] mx-auto py-20">
-    <div class="content flex flex-row">
-        <div class="left-content relative bg-green-00 flex flex-col bg-green-0 p-5">
+<div class="contain w-[90%] mx-auto mobile:py-5 desktop:py-20">
+    <div class="content flex mobile:flex-col desktop:flex-row">
+        <div class="left-content relative bg-green-00 flex flex-col bg-green-0 mobile:p-0 desktop:p-5">
             <div class="title-section mb-5">
-                <h1 class="text-primary text-[25px]">Resultados</h1>
+                <h1 class="text-primary mobile:text-[20px] mobile:text-center desktop:text-left desktop:text-[25px]">Resultados</h1>
             </div>
             <div class="main-title mb-5">
-                <h1 class="text-secondary text-[44px] font-bold">Somos gratos por toda confiança que é depositada.</h1>
+                <h1 class="text-secondary mobile:text-[23px] mobile:text-center desktop:text-left desktop:text-[44px] font-bold">Somos gratos por toda confiança que é depositada.</h1>
             </div>
             <div class="text-paragraph mb-5">
-                <p class="text-[18px]">
+                <p class="mobile:text-[14px] mobile:text-center desktop:text-[18px] desktop:text-left opacity-[0.6]">
                     Garantimos fatisfação e resultados para nossos pacientes, somando resultados excelente por cada mês.
                 </p>
             </div>
-            <div class="statistics w-full flex gap-20 mb-5">
-                <div class="patients flex flex-col justify-center bg-red-0">
+            <div class="statistics mobile:w-[90%] mobile:mx-auto desktop:w-full flex mobile:justify-around desktop:justify-start gap-20 mb-5">
+                <div class="patients flex flex-col justify-center items-center bg-red-0">
                     <div class="large-number">
-                        <h1 class="text-[62px] text-primary font-bold text-center">+35</h1>
+                        <h1 class="mobile:text-[45px] desktop:text-[62px] text-primary font-bold text-center">+35</h1>
                     </div>
                     <div class="small-description">
-                        <p>Pacientes por mês</p>
+                        <p class="mobile:text-[12px] desktop:text-[16px] text-center opacity-[0.6]">Pacientes por mês</p>
                     </div>
                 </div>
                 <div class="calls flex flex-col justify-center bg-red-0">
                     <div class="large-number">
-                        <h1 class="text-[62px] text-primary font-bold text-center">+72</h1>
+                        <h1 class="mobile:text-[45px] desktop:text-[62px] text-primary font-bold text-center">+72</h1>
                     </div>
                     <div class="small-description">
-                        <p>Ligações por mês</p>
+                        <p class="mobile:text-[12px] desktop:text-[16px] text-center opacity-[0.6]">Ligações por mês</p>
                     </div>
                 </div>
             </div>
-            <div class="all-results-panel">
+            <div class="all-results-panel mobile:hidden desktop:block">
                 <button class="contact-us bg-secondary py-3 px-5 my-7 flex gap-x-3 rounded-[4px]" (click)="this.toggleVisibility()">
                     <div class="text text-white">
                         <p class="text-[16px]">Ver todos os resultados</p>
@@ -38,7 +38,7 @@
                 </button>
             </div>
         </div>
-        <div class="right-content relative bg-green-00 flex items-end justify-center">
+        <div class="right-content relative bg-green-00 flex mobile:items-center  desktop:items-end justify-center">
             <div class="images bg-orange-00">
                 <div class="image">
                     <img src="assets/images/results/image1.jpg" alt="">
@@ -52,11 +52,20 @@
                 <div class="image">
                     <img src="assets/images/results/image1.jpg" alt="">
                 </div>
-            </div>  
+            </div>
+  
+        </div>
+
+        <div class="all-results-panel bg-blue-00 flex justify-center mobile:flex desktop:hidden">
+            <button class="contact-us bg-secondary py-3 px-5 my-7 rounded-[4px]" (click)="this.toggleVisibility()">
+                <div class="text text-white">
+                    <p class="text-[16px]">Ver todos os resultados</p>
+                </div>
+            </button>
         </div>
     </div>
-    <div class="all-results p-4 bg-orange-00">
-        <div class="boxes bg-red-00 mt-24 overflow-hidden" [ngClass]="{'show': this.showAllResults, 'hide': !this.showAllResults}">
+    <div class="all-results mobile:p-0 desktop:p-4 bg-orange-00">
+        <div class="boxes bg-red-00 mobile:mt-10 desktop:mt-24 overflow-hidden" [ngClass]="{'show': this.showAllResults, 'hide': !this.showAllResults}">
 
             <div class="box">
                 <img src="assets/images/results/image1.jpg" alt="">

@@ -24,7 +24,7 @@
     white-space: nowrap;
     display: inline-block;
     position: relative;
-    margin-right: 50px;
+    /* margin-right: 50px; */
 }
 .box:hover .background{
     opacity: 0;

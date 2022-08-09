@@ -1,11 +1,11 @@
-<div class="contain w-[90%] mx-auto py-20">
+<div class="contain w-[90%] mx-auto mobile:py-5 desktop:py-20">
     <div class="content flex flex-row flex-row-reverse">
         <div class="left-content flex flex-col bg-green-0 p-0">
             <div class="title-section mb-3">
-                <h1 class="text-primary text-[25px]">Contacte-Nos</h1>
+                <h1 class="text-primary mobile:text-[20px] mobile:text-center desktop:text-left desktop:text-[25px]">Contacte-Nos</h1>
             </div>
             <div class="main-title mb-4">
-                <h1 class="text-secondary text-[45px] font-bold">Não espere muito para ter um sorriso lindo! Contacte-nos.</h1>
+                <h1 class="text-secondary mobile:text-[23px] mobile:text-center desktop:text-left desktop:text-[45px] font-bold">Não espere muito para ter um sorriso lindo! Contacte-nos.</h1>
             </div>
             <div class="contact-form mb-0">
                 <form [formGroup]="this.form" action="" method="POST" class="block">
@@ -27,7 +27,7 @@
                 </form>
             </div>
         </div>
-        <div class="right-content relative bg-green-0 flex justify-center">
+        <div class="right-content relative mobile:hidden desktop:flex bg-green-0 flex justify-center">
             <div class="image relative">
                 <img src="assets/images/contact-us/image1.jpg" alt="">
             </div>
