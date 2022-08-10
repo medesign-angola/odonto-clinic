@@ -1,10 +1,22 @@
 <header class="bg-orange-0 mobile:hidden desktop:block" #containHeader [ngClass]="{'is-scrolling': this.hasHeaderToChange}">
   <div class="contain bg-slate-0">
     <nav class="flex justify-between items-center">
-      <div class="logo" [innerHTML]="this.logoImage">
+
+      
+      <div class="top-icons mobile:flex desktop:hidden w-full bg-slate-0 flex justify-between items-center w-[90%] z-10 translate-x-[-50%] left-[50%] mt-0 absolute">
+        <div class="menu-hamburger">
+          <img src="assets/images/icons/menu-icon-hamburger.svg" alt="">
+        </div>
+        <div class="logo-menu-hidden">
+          <img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt="">
+        </div>
+      </div>
+
+      <div class="logo mobile:hidden desktop:block" [innerHTML]="this.logoImage">
         <!-- <img src="assets/images/logo/logo-desktop.svg" alt="Odonto Clinic"> -->
       </div>
-      <div class="menu">
+
+      <div class="menu mobile:hidden desktop:block">
         <ul>
           <li><a routerLink="" (click)="scrollTo(home)">Home</a></li>
           <li><a routerLink="" (click)="scrollTo(about)">Nossa Clínica</a></li>
@@ -17,18 +29,6 @@
   </div>
 </header>
 
-<header class="mobile mobile:block desktop:hidden">
-  <nav>
-    <div class="top-icons w-full bg-slate-0 flex justify-between items-center w-[90%] z-10 translate-x-[-50%] left-[50%] mt-0 absolute">
-      <div class="menu-hamburger">
-        <img src="assets/images/icons/menu-icon-hamburger.svg" alt="">
-      </div>
-      <div class="logo-menu-hidden">
-        <img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt="">
-      </div>
-    </div>
-  </nav>
-</header>
 
 <div class="fixed-social-media mobile:hidden desktop:block fixed z-[10]" [ngClass]="{'shown': !this.isSocialMediaHide, 'hide': this.isSocialMediaHide}">
   <div class="box bg-secondary relative flex flex-col justify-center items-center px-2 py-7 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
@@ -70,10 +70,73 @@
 </div>
 
 <footer class="bg-secondary relative mobile:py-10 desktop:py-20 mobile:px-0 desktop:px-10">
+  <div class="background absolute top-0 left-0 w-full h-full z-[1]"></div>
+
+  <div class="content contain relative w-[90%] mx-auto z-[2] bg-red-00 mb-20 flex mobile:flex-col desktop:flex-row justify-between items-center">
+
+    <div class="about flex flex-col mobile:hidden desktop:flex bg-green-00">
+      <div class="logo-desc mb-7">
+        <img src="assets/images/logo/footer-logo-description.svg" alt="">
+      </div>
+      <div class="text">
+        <p class="text-white opacity-[0.6]">Garantimos satisfação e resultados para nossos pacientes, somando resultados excelente por cada mês.</p>
+      </div>
+    </div>
+
+    <div class="attending mobile:text-center desktop:text-left bg-green-00">
+      <div class="title mb-3">
+        <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Atendimentos</h1>
+      </div>
+      <div class="times-first mb-2">
+        <p class="text-white mobile:text-[12px] desktop:text-[16px]"><strong>Segunda-Feira</strong> - 8h:00 às 17h:00</p>
+      </div>
+      <div class="times-first">
+        <p class="text-white mobile:text-[12px] desktop:text-[16px]"><strong>Sábado e Domingo</strong> - 8h:00 às 12h:00</p>
+      </div>
+    </div>
+
+    <div class="contacts mobile:text-center desktop:text-left mobile:my-5 desktop:mt-0 bg-green-00">
+      <div class="title mb-3">
+        <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Contactos</h1>
+      </div>
+
+      <div class="contacts-desc relative mobile:flex mobile:flex-row mobile:justify-between mobile:items-center desktop:block">
+
+        <div class="phones flex items-center justify-start gap-4 mobile:mb-0 desktop:mb-2">
+          <div class="icon">
+            <img src="assets/images/icons/footer-phone.svg" alt="">
+          </div>
+          <div class="numbers">
+            <p class="text-white mobile:text-[12px] desktop:text-[16px]">+244 927 963 432 <br> +244 927 963 335</p>
+          </div>
+        </div>
+
+        <div class="email flex items-center justify-start gap-4">
+          <div class="icon">
+            <img src="assets/images/icons/footer-email.svg" alt="">
+          </div>
+          <div class="text">
+            <p class="text-white mobile:text-[12px] desktop:text-[16px]">geral@odontoclinic.ao</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="copyrights absolute bottom-0 left-0 w-full bg-orange-00 py-5 mt- text-center">
+    <p class="text-white mobile:text-[12px] desktop:text-[16px]">&copy; 2022 - Odonto Clinic. Todos os direitos reservados.</p>
+  </div>
+
+</footer>
+
+<!-- <footer class="bg-secondary relative mobile:py-10 desktop:py-20 mobile:px-0 desktop:px-10">
 
   <div class="background absolute top-0 left-0 w-full h-full z-[1]"></div>
 
-  <div class="content contain relative w-[90%] mx-auto z-[2] bg-red-00 mobile:mb-0 desktop:mb-10 flex mobile:flex-col desktop:flex-row justify-between items-start">
+  <div class="content contain relative w-[90%] mx-auto z-[2] bg-red-00 mb-10 flex mobile:flex-col desktop:flex-row justify-between items-start">
 
     <div class="about flex flex-col mobile:hidden desktop:flex">
       <div class="logo-desc mb-7">
@@ -100,9 +163,9 @@
         <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Contactos</h1>
       </div>
 
-      <div class="contacts-desc bg-slate-00 relative mobile:flex mobile:flex-row mobile:justify-between mobile:items-center desktop:block">
+      <div class="contacts-desc relative mobile:flex mobile:flex-row mobile:justify-between mobile:items-center desktop:block">
 
-        <div class="phones flex items-center bg-orange-00 justify-start gap-4 mobile:mb-0 desktop:mb-2">
+        <div class="phones flex items-center justify-start gap-4 mobile:mb-0 desktop:mb-2">
           <div class="icon">
             <img src="assets/images/icons/footer-phone.svg" alt="">
           </div>
@@ -111,7 +174,7 @@
           </div>
         </div>
 
-        <div class="email flex items-center bg-green-00 justify-start gap-4">
+        <div class="email flex items-center justify-start gap-4">
           <div class="icon">
             <img src="assets/images/icons/footer-email.svg" alt="">
           </div>
@@ -124,9 +187,5 @@
     </div>
 
   </div>
-
-  <div class="copyrights absolute bottom-0 left-0 w-full bg-orange-300 py-5 text-center">
-    <p class="text-white mobile:text-[12px] desktop:text-[16px]">&copy; 2022 - Odonto Clinic. Todos os direitos reservados.</p>
-  </div>
   
-</footer>
+</footer> -->
