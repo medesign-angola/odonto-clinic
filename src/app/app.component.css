@@ -31,6 +31,14 @@ header.is-scrolling .menu ul li a{
 
 .menu{
     margin-right: 50px;
+    transition: .3s;
+}
+.menu.hide{
+    /* display: none; */
+    top: -550px;
+}
+.menu.show{
+    top: 0px;
 }
 .menu ul{
     list-style: none;

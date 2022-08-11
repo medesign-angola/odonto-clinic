@@ -5,12 +5,14 @@
         height: auto;
     }
     .right-content .images .image{
-        width: 155px;
+        width: 44%;
+        /* height: 200px; */
         height: 150px;
         margin: 10px;
     }
     .right-content .images{
         width: 100%;
+        /* background-color: #fc0; */
     }
     .all-results .boxes .box{
         width: 100%;

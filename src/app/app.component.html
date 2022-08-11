@@ -1,22 +1,34 @@
-<header class="bg-orange-0 mobile:hidden desktop:block" #containHeader [ngClass]="{'is-scrolling': this.hasHeaderToChange}">
+<header class="bg-orange-0" #containHeader [ngClass]="{'is-scrolling': this.hasHeaderToChange}">
   <div class="contain bg-slate-0">
-    <nav class="flex justify-between items-center">
+    <nav class="flex mobile:flex-row-reverse desktop:flex-row justify-between items-center">
 
       
-      <div class="top-icons mobile:flex desktop:hidden w-full bg-slate-0 flex justify-between items-center w-[90%] z-10 translate-x-[-50%] left-[50%] mt-0 absolute">
-        <div class="menu-hamburger">
-          <img src="assets/images/icons/menu-icon-hamburger.svg" alt="">
-        </div>
-        <div class="logo-menu-hidden">
-          <img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt="">
-        </div>
-      </div>
+      <!-- <div class="top-icons mobile:flex desktop:hidden w-full bg-slate-0 flex justify-between items-center w-[90%] z-10 translate-x-[-50%] left-[50%] mt-0 absolute">
+        
+        
+      </div> -->
 
       <div class="logo mobile:hidden desktop:block" [innerHTML]="this.logoImage">
         <!-- <img src="assets/images/logo/logo-desktop.svg" alt="Odonto Clinic"> -->
       </div>
 
-      <div class="menu mobile:hidden desktop:block">
+      <div class="logo-menu-hidden mobile:block desktop:hidden" [innerHTML]="this.logoMobileImage">
+        <!-- <img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt=""> -->
+      </div>
+      <div class="menu-hamburger mobile:block desktop:hidden" [innerHTML]="this.mobileMenuIcon" (click)="this.menuToggle()">
+        <!-- <img src="assets/images/icons/menu-icon-hamburger.svg" alt=""> -->
+      </div>
+
+      <div class="menu" [ngClass]="{'show': !this.isMenuHidden, 'hide': this.isMenuHidden}">
+        <div class="mobile-menu-header bg-yellow-00 mobile:flex desktop:hidden my-[20px] mx-[20px] flex justify-between items-center">
+          <div class="close-btn bg-green-00" (click)="this.menuToggle()">
+            <img src="assets/images/icons/close-mobile-menu.svg" alt="">
+          </div>
+          <div class="logo-menu-header">
+            <img src="assets/images/logo/logo-mobile-white-bg.svg" alt="">
+          </div>
+        </div>
+        <hr class="mobile:block desktop:hidden">
         <ul>
           <li><a routerLink="" (click)="scrollTo(home)">Home</a></li>
           <li><a routerLink="" (click)="scrollTo(about)">Nossa Clínica</a></li>

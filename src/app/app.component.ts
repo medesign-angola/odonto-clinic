@@ -14,6 +14,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   hasHeaderToChange: boolean = false;
   hasLogoToChange: boolean = false;
   logoImage: string = '<img src="assets/images/logo/logo-desktop.svg" alt="Odonto Clinic">';
+  logoMobileImage: string = '<img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt="Odonto Clinic">';
+
+  mobileMenuIcon: string = '<img src="assets/images/icons/menu-icon-hamburger.svg" alt="">';
+
+  isMenuHidden:boolean = true;
 
   @ViewChild('containHeader') containHeader !: ElementRef;
   containHeaderOffset: any;
@@ -45,8 +50,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   changeLogo(){
     if(this.hasLogoToChange){
       this.logoImage = '<img src="assets/images/logo/logo-desktop-white-bg.svg" alt="Odonto Clinic">';
+      this.logoMobileImage = '<img src="assets/images/logo/logo-mobile-white-bg.svg" alt="Odonto Clinic">';
+      this.mobileMenuIcon = '<img src="assets/images/icons/menu-icon-hamburger-white-bg.svg" alt="">';
     }else{
       this.logoImage = '<img src="assets/images/logo/logo-desktop.svg" alt="Odonto Clinic">';
+      this.logoMobileImage = '<img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt="Odonto Clinic">';
+      this.mobileMenuIcon = '<img src="assets/images/icons/menu-icon-hamburger.svg" alt="">';
     }
   }
 
@@ -56,6 +65,12 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   scrollTo(element: HTMLElement){
     scrollTo(0, element.offsetTop - 90);
+    
+    this.menuToggle();
+  }
+
+  menuToggle(){
+    this.isMenuHidden = !this.isMenuHidden;
   }
 
 }
