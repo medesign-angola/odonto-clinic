@@ -35,7 +35,7 @@ header.is-scrolling .menu ul li a{
 }
 .menu.hide{
     /* display: none; */
-    top: -550px;
+    top: -700px;
 }
 .menu.show{
     top: 0px;
