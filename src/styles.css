@@ -17,6 +17,7 @@ html{
 :root{
     --primary-color: #F9A719;
     --secondary-color: #397D7E;
+    --mini-boxes-width-height-value: 247px;
 }
 body{
     overflow-x: hidden;
