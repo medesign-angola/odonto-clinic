@@ -1,3 +1,6 @@
+*{
+    scroll-behavior: smooth;
+}
 .contain{
     max-width: 1536px;
     margin: 0px auto;

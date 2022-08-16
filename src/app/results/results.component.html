@@ -40,17 +40,21 @@
         </div>
         <div class="right-content relative bg-green-00 flex mobile:items-center  desktop:items-end justify-center">
             <div class="images bg-orange-00">
-                <div class="image">
-                    <img src="assets/images/results/image1.jpg" alt="">
+                <div class="row one flex bg-green-00 justify-center">
+                    <div class="image">
+                        <img src="assets/images/results/image1.jpg" alt="">
+                    </div>
+                    <div class="image">
+                        <img src="assets/images/results/image1.jpg" alt="">
+                    </div>
                 </div>
-                <div class="image">
-                    <img src="assets/images/results/image1.jpg" alt="">
-                </div>
-                <div class="image">
-                    <img src="assets/images/results/image1.jpg" alt="">
-                </div>
-                <div class="image">
-                    <img src="assets/images/results/image1.jpg" alt="">
+                <div class="row two flex bg-orange-00 justify-center">
+                    <div class="image">
+                        <img src="assets/images/results/image1.jpg" alt="">
+                    </div>
+                    <div class="image">
+                        <img src="assets/images/results/image1.jpg" alt="">
+                    </div>
                 </div>
             </div>
   
@@ -64,8 +68,8 @@
             </button>
         </div>
     </div>
-    <div class="all-results mobile:hidden desktop:block mobile:p-0 desktop:p-4 bg-orange-00">
-        <div class="boxes bg-red-00 mobile:mt-10 desktop:mt-24 overflow-hidden" [ngClass]="{'show': this.showAllResults, 'hide': !this.showAllResults}">
+    <div class="all-results mobile:hidden desktop:block mobile:p-0 desktop:p-4 bg-orange-000">
+        <div class="boxes bg-red-00 mobile:mt-10 desktop:mt-24 overflow-hidden flex flex-wrap justify-center" [ngClass]="{'show': this.showAllResults, 'hide': !this.showAllResults}">
 
             <div class="box">
                 <img src="assets/images/results/image1.jpg" alt="">

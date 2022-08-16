@@ -6,14 +6,14 @@
     }
     .right-content .images .image{
         /* width: 44px; */
-        width: calc(var(--mini-boxes-width-height-value) / 2);
-        height: calc(var(--mini-boxes-width-height-value) / 2);
+        /* width: calc(var(--mini-boxes-width-height-value) / 2); */
+        /* height: calc(var(--mini-boxes-width-height-value) / 2); */
         /* height: 150px; */
         /* margin: 10px; */
     }
     .right-content .images{
         width: 100%;
-        background-color: #fc0;
+        /* background-color: #fc0; */
     }
     .all-results .boxes .box{
         width: 100%;
