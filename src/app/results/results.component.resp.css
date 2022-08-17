@@ -8,7 +8,7 @@
         /* width: 44px; */
         /* width: calc(var(--mini-boxes-width-height-value) / 2); */
         /* height: calc(var(--mini-boxes-width-height-value) / 2); */
-        /* height: 150px; */
+        height: auto;
         /* margin: 10px; */
     }
     .right-content .images{

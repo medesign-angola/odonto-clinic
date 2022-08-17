@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="all-results-panel mobile:hidden desktop:block">
-                <button class="contact-us bg-secondary py-3 px-5 my-7 flex gap-x-3 rounded-[4px]" (click)="this.toggleVisibility()">
+                <button class="contact-us bg-secondary py-3 px-5 my-7 flex gap-x-3 rounded-[4px]">
                     <div class="text text-white">
                         <p class="pr text-[16px]">Ver todos os resultados</p>
                     </div>
@@ -41,19 +41,19 @@
         <div class="right-content relative bg-green-00 flex mobile:items-center  desktop:items-end justify-center">
             <div class="images bg-orange-00">
                 <div class="row one flex bg-green-00 justify-center">
-                    <div class="image">
-                        <img src="assets/images/results/image1.jpg" alt="">
+                    <div class="image desktop:h-[225px]">
+                        <img src="assets/images/results/image1.png" alt="">
                     </div>
-                    <div class="image">
-                        <img src="assets/images/results/image1.jpg" alt="">
+                    <div class="image desktop:h-[225px]">
+                        <img src="assets/images/results/image2.png" alt="">
                     </div>
                 </div>
                 <div class="row two flex bg-orange-00 justify-center">
-                    <div class="image">
-                        <img src="assets/images/results/image1.jpg" alt="">
+                    <div class="image desktop:h-[225px]">
+                        <img src="assets/images/results/image1.png" alt="">
                     </div>
-                    <div class="image">
-                        <img src="assets/images/results/image1.jpg" alt="">
+                    <div class="image desktop:h-[225px]">
+                        <img src="assets/images/results/image2.png" alt="">
                     </div>
                 </div>
             </div>
@@ -61,71 +61,11 @@
         </div>
 
         <div class="all-results-panel bg-blue-00 flex justify-center mobile:flex desktop:hidden">
-            <button class="contact-us bg-secondary py-3 px-5 my-7 rounded-[4px]" (click)="this.toggleVisibility()">
+            <button class="contact-us bg-secondary py-3 px-5 my-7 rounded-[4px]">
                 <div class="text text-white">
                     <p class="text-[16px]">Ver todos os resultados</p>
                 </div>
             </button>
-        </div>
-    </div>
-    <div class="all-results mobile:hidden desktop:block mobile:p-0 desktop:p-4 bg-orange-000">
-        <div class="boxes bg-red-00 mobile:mt-10 desktop:mt-24 overflow-hidden flex flex-wrap justify-center" [ngClass]="{'show': this.showAllResults, 'hide': !this.showAllResults}">
-
-            <div class="box">
-                <img src="assets/images/results/image1.jpg" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/results/image1.jpg" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/results/image1.jpg" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/results/image1.jpg" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/results/image1.jpg" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/results/image1.jpg" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-
         </div>
     </div>
 </div>

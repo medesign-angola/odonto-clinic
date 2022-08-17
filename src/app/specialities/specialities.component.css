@@ -17,11 +17,15 @@
 .box .image img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
+/* .images-container .box .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
 .box{
-    width: 350px;
-    height: 220px;
+    width: 338px;
+    height: 215px;
     overflow: hidden;
     border-radius: 4px;
     white-space: nowrap;
@@ -43,16 +47,22 @@
     opacity: .4;
     cursor: auto;
 }
+.mother-bar{
+    background-color: #F4F4F4;;
+}
 
 ::-webkit-scrollbar {
     /* width: 200px; */
     height: 5px;
+    display: none;
 }
 ::-webkit-scrollbar-track {
     background-color: #F4F4F4;
     border-radius: 4px;
+    /* display: none; */
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--secondary-color);
     border-radius: 4px;
+    /* display: none; */
 }

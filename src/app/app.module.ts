@@ -12,6 +12,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ContactPanelComponent } from './contact-panel/contact-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BannerMobileComponent } from './banner-mobile/banner-mobile.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BannerMobileComponent } from './banner-mobile/banner-mobile.component';
     ResultsComponent,
     ContactUsComponent,
     ContactPanelComponent,
-    BannerMobileComponent
+    BannerMobileComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

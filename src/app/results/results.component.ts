@@ -9,14 +9,8 @@ export class ResultsComponent implements OnInit {
 
   constructor() { }
 
-  showAllResults: boolean = true;
-
   ngOnInit(): void {
 
-  }
-
-  toggleVisibility(){
-    // this.showAllResults = !this.showAllResults;
   }
 
 }

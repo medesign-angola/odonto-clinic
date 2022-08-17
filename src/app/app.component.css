@@ -77,7 +77,7 @@ footer .background{
     background-image: url('../assets/images/patterns/p.png');
 }
 footer .content > div{
-    width: 380px;
+    /* width: 430px; */
     height: 180px;
 }
 footer .content{

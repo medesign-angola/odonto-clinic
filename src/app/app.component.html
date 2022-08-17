@@ -86,12 +86,16 @@
   <app-results></app-results>
 </div>
 
+<div class="posts bg-green-00" #posts>
+  <app-posts></app-posts>
+</div>
+
 <footer class="bg-secondary relative mobile:py-10 desktop:py-20 mobile:px-0 desktop:px-10">
   <div class="background absolute top-0 left-0 w-full h-full z-[1]"></div>
 
   <div class="content contain relative w-[90%] mx-auto z-[2] bg-red-00 mb-20 flex mobile:flex-col desktop:flex-row justify-between items-center">
 
-    <div class="about flex flex-col mobile:hidden desktop:flex bg-green-00">
+    <div class="about flex flex-col mobile:hidden desktop:flex bg-green-00 mobile:w-full desktop:w-[350px]">
       <div class="logo-desc mb-7">
         <img src="assets/images/logo/footer-logo-description.svg" alt="">
       </div>
@@ -100,7 +104,7 @@
       </div>
     </div>
 
-    <div class="attending mobile:text-center desktop:text-left bg-green-00">
+    <div class="attending mobile:text-center desktop:text-left bg-green-00 mobile:w-full desktop:w-[300px]">
       <div class="title mb-3">
         <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Atendimentos</h1>
       </div>
@@ -112,14 +116,12 @@
       </div>
     </div>
 
-    <div class="contacts mobile:text-center mobile:mb-10 desktop:text-left mobile:my-5 desktop:mt-0 bg-green-00">
+    <div class="contacts mobile:text-center mobile:mb-10 desktop:mb-0 desktop:text-left mobile:my-5 desktop:mt-0 bg-green-00 mobile:w-full desktop:w-[440px]">
       <div class="title mb-3">
         <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Contactos</h1>
       </div>
-
       <!-- <div class="contacts-desc relative mobile:flex mobile:flex-row mobile:justify-between mobile:items-center desktop:items-start desktop:flex"> -->
       <div class="contacts-desc relative mobile:flex mobile:flex-col mobileL:flex-row mobile:justify-between mobile:items-center desktop:items-start desktop:flex">
-
         <div class="phones flex items-center justify-start gap-4 mobile:mb-0 desktop:mb-2">
           <div class="icon mobile:w-[30px] bg-orange-00">
             <img src="assets/images/icons/footer-phone.svg" alt="">
