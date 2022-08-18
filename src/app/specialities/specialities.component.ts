@@ -80,7 +80,7 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
       this.isOnThirdImage = true;
       this.isOnFourthImage = false;
       
-    }else if(this.slideTotal >= this.fourthBoxLeftOffset){
+    }else if(this.slideTotal + 20 >= this.fourthBoxLeftOffset){
       
       this.isOnFirstImage = false;
       this.isOnSecondImage = false;
