@@ -33,7 +33,7 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
   isOnThirdImage: boolean = false;
   isOnFourthImage: boolean = false;
 
-  childSlide: number = 25;
+  childSlide: string = 25 + '%';
 
   ngOnInit(): void {
 
@@ -80,7 +80,7 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
       this.isOnThirdImage = true;
       this.isOnFourthImage = false;
       
-    }else if(this.slideTotal + 25 >= this.fourthBoxLeftOffset){
+    }else if(this.slideTotal >= this.fourthBoxLeftOffset){
       
       this.isOnFirstImage = false;
       this.isOnSecondImage = false;
@@ -133,16 +133,16 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
 
   checkUserPosition(){
     if(this.isOnFirstImage){
-      this.childSlide = 25;
+      this.childSlide = 25 + '%';
 
     }else if(this.isOnSecondImage){
-      this.childSlide = 50;
+      this.childSlide = 50 + '%';
 
     }else if(this.isOnThirdImage){
-      this.childSlide = 75;
+      this.childSlide = 75 + '%';
 
     }else if(this.isOnFourthImage){
-      this.childSlide = 100;
+      this.childSlide = 100 + '%';
 
     }
   }
