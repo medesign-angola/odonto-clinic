@@ -46,6 +46,11 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
     this.secondBoxLeftOffset = this.secondBoxElement.nativeElement.offsetLeft;
     this.thirdBoxLeftOffset = this.thirdBoxElement.nativeElement.offsetLeft;
     this.fourthBoxLeftOffset = this.fourthBoxElement.nativeElement.offsetLeft;
+
+    let intevalToVerify = setInterval(() => {
+      this.checkUserPosition();
+    }, 400)
+    
   }
 
   @HostListener('window:wheel', ['$event'])

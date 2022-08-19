@@ -1,3 +1,7 @@
+.contain{
+    max-width: var(--div-max-width);
+    margin: 0px auto;
+}
 .all-results{}
 .all-results .boxes{
 }

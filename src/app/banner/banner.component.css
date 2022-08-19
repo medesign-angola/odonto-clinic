@@ -1,3 +1,9 @@
+.content-all{
+    position: relative;
+    max-width: var(--div-max-width);
+    margin: 0px auto;
+    overflow: hidden;
+}
 div.slide img{
     filter: grayscale(100%);
     height: 100%;

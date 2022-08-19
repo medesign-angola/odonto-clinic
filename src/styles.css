@@ -2,7 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;800;900&display=swap'); */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins/Poppins-ExtraLight-200.ttf');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins/Poppins-Light-300.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins/Poppins-Medium-500.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins/Poppins-SemiBold-600.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins/Poppins-Bold-700.ttf');
+    font-weight: 700;
+}
 
 *{
     margin: 0;
@@ -18,6 +48,7 @@ html{
     --primary-color: #F9A719;
     --secondary-color: #397D7E;
     --mini-boxes-width-height-value: 247px;
+    --div-max-width: 1536px;
 }
 body{
     overflow-x: hidden;

@@ -3,7 +3,7 @@
     height: 700px;
 }
 .contain{
-    max-width: 1536px;
+    max-width: var(--div-max-width);
     margin: 0px auto;
 }
 .right-content{}
