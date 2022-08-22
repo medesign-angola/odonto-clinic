@@ -40,11 +40,11 @@ header.is-scrolling .menu ul li a{
 
 .menu{
     margin-right: 50px;
-    transition: .3s;
+    transition: .8s;
 }
 .menu.hide{
     /* display: none; */
-    top: -700px;
+    top: -550px;
 }
 .menu.show{
     top: 0px;

@@ -36,11 +36,11 @@ div.slide img{
 .slide.past-four
 {
     left: -100%;
-    transition: 1s ease-in-out;
+    transition: 1.4s ease-in-out;
 }
 .slide.present{
     left: 0%;
-    transition: 1s ease-in-out;
+    transition: 1.4s ease-in-out;
 }
 .slide.future{
     left: 100%;

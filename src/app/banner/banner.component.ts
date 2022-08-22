@@ -29,7 +29,7 @@ export class BannerComponent implements OnInit {
     let slideInterval = setInterval(() => {
       this.slideChange();
 
-    }, 3500);
+    }, 4000);
 
   }
 

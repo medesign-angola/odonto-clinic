@@ -18,7 +18,6 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
   isPrevClickable: boolean = false;
   isNextClickable: boolean = true;
 
-  slideElements: any;
   slideTotal: any; //a distancia total entre uma box e a lateral esquerda da tela.
 
   // Variáveis para as offsets, para fazer o scroll
@@ -83,11 +82,11 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
   checkWhoIsActive(){
     let interval = setInterval(() => {
       this.conditionsOnScroll();
-    }, 500)
+    }, 400)
 
     setTimeout(() => {
       clearInterval(interval);
-    }, 1000)
+    }, 450)
 
     // this.checkUserPosition();
   }
@@ -101,6 +100,10 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
   @HostListener('window:wheel', ['$event'])
   listening(){
     // Validação da posição actual da lateral esquerda da tela para mobile
+
+    
+    // console.log(this.slideTotal);
+    // console.log(this.fourthBoxLeftOffset);
 
     this.conditionsOnScroll();
 
@@ -154,18 +157,31 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
       this.isOnThirdImage = true;
       this.isOnFourthImage = false;
 
+      // console.log(this.slideTotal + 2);
+      // console.log(this.fourthBoxLeftOffset);
+
+      // return;
+
       // Para cada verificação da posição do ecrã, função para actualizar a percentagem do custom scroll
       this.checkUserPosition();
       
-    }else if(this.slideTotal + 20 >= this.fourthBoxLeftOffset){
+    }else if(this.slideTotal >= this.fourthBoxLeftOffset){
       
       this.isOnFirstImage = false;
       this.isOnSecondImage = false;
       this.isOnThirdImage = false;
       this.isOnFourthImage = true;
+
+
+      // console.log(this.slideTotal);
+      // console.log(this.fourthBoxLeftOffset);
+
+      // return;
       
       // Para cada verificação da posição do ecrã, função para actualizar a percentagem do custom scroll
       this.checkUserPosition();
+    }else{
+      return;
     }
   }
 
