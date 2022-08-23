@@ -17,6 +17,7 @@
 .box .image img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 /* .images-container .box .image img{
     width: 100%;
