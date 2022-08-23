@@ -86,7 +86,7 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
 
     setTimeout(() => {
       clearInterval(interval);
-    }, 450)
+    }, 800)
 
     // this.checkUserPosition();
   }

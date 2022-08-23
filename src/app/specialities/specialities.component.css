@@ -50,6 +50,9 @@
 .mother-bar{
     background-color: #F4F4F4;;
 }
+.child-bar{
+    transition: all .3s ease-in-out;
+}
 
 ::-webkit-scrollbar {
     /* width: 200px; */
