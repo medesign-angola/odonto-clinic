@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServicesService } from '../app-services/api-services.service';
 
 @Component({
   selector: 'app-posts',
@@ -7,15 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiServicesService) { }
 
-  showAllResults: boolean = true;
+  posts: any;
 
   ngOnInit(): void {
+    this.getPosts();
   }
-  
-  toggleVisibility(){
-    // this.showAllResults = !this.showAllResults;
+
+  getPosts(){
+    this.api.getInstaPosts().subscribe((resp) => {
+      // console.log(resp);
+      this.posts = resp;
+
+      // console.log(this.posts.data);
+      this.posts = this.posts.data;
+    });
   }
 
 }

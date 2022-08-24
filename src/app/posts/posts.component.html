@@ -1,60 +1,17 @@
-<div class="contain w-[90%] mx-auto mobile:py-5 desktop:py-0">
+<div class="contain w-[90%] mx-auto mobile:py-5 desktop:py-0" *ngIf="this.posts">
     <div class="all-results mobile:hidden desktop:block mobile:p-0 desktop:p-0 bg-orange-000">
-        <div class="boxes bg-red-00 mobile:mt-10 desktop:mt-10 desktop:mb-36 overflow-hidden flex flex-wrap justify-center" [ngClass]="{'show': this.showAllResults, 'hide': !this.showAllResults}">
+        <div class="boxes bg-red-00 mobile:mt-10 desktop:mt-10 desktop:mb-36 overflow-hidden flex flex-wrap justify-center">
 
-            <div class="box">
-                <img src="assets/images/posts/image1.png" alt="">
+            <div class="box" *ngFor="let post of this.posts">
+                <a href="{{post.permalink}}" target="_blank">
+                    <img src="{{post.media_url}}" alt="">
 
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/posts/image1.png" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/posts/image1.png" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/posts/image1.png" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/posts/image1.png" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
-            </div>
-            <div class="box">
-                <img src="assets/images/posts/image1.png" alt="">
-
-                <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
-                    <div class="content flex bg-red-0 justify-center items-end h-full w-full">
-                        <p class="text-white underline font-semibold">@titulo_da_publicacao</p>
-                    </div>
-                </section>
+                    <section class="background w-full h-full z-[2] absolute left-0 top-0 p-10">
+                        <div class="content flex bg-red-0 justify-center items-end h-full w-full">
+                            <p class="text-white underline font-semibold">{{post.caption ? '@'+post.caption : ''}}</p>
+                        </div>
+                    </section>
+                </a>
             </div>
 
         </div>

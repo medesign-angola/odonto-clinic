@@ -13,6 +13,8 @@ import { ContactPanelComponent } from './contact-panel/contact-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BannerMobileComponent } from './banner-mobile/banner-mobile.component';
 import { PostsComponent } from './posts/posts.component';
+import { ApiServicesService } from './app-services/api-services.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,9 +33,12 @@ import { PostsComponent } from './posts/posts.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiServicesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
