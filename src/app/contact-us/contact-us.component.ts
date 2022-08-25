@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiServicesService } from '../app-services/api-services.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiServicesService) { }
 
   form: any;
 
@@ -34,14 +35,23 @@ export class ContactUsComponent implements OnInit {
 
     if(!this.form.invalid){
 
+      // console.log(this.form);
 
-      this.appendFormData();
+      const formData = new FormData;
+      
+      formData.append('nome', this.form.get('nome').value);
+      formData.append('assunto', this.form.get('assunto').value);
+      formData.append('email', this.form.get('email').value);
+      formData.append('mensagem', this.form.get('mensagem').value);
 
-      // Vai se comunicar com a API
+      console.log(formData);
 
-      window.alert("Sem ação nenhuma, de momento.");
+      // this.api.send_email(formData).subscribe(data => {
+      //   console.log(data);
 
-      this.form.reset();
+      //   this.form.reset();
+      // });
+      // window.alert("Sem ação nenhuma, de momento.");
 
     }else{
       this.isNameInvalidFunction();
@@ -52,16 +62,12 @@ export class ContactUsComponent implements OnInit {
 
   }
 
-  appendFormData(formData = new FormData){
+  // appendFormData(formData = new FormData){
 
-    formData.append('nome', this.form.get('nome').value);
-    formData.append('assunto', this.form.get('assunto').value);
-    formData.append('email', this.form.get('email').value);
-    formData.append('mensagem', this.form.get('mensagem').value);
 
-    // console.log(formData.get('nome'));
-
-  }
+  //   // console.log(formData.get('nome'));
+  //   return formData;
+  // }
 
   isNameInvalidFunction(){
     if(this.form.get('nome').invalid){
