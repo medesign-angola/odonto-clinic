@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  // token: "IGQVJVcWVSY0FiLXZAqbFdPQXRDdnNsUFZAva3hMRkNLblc2SHYybkhMbUtuUXVpWWh6blZASSHRqVmtIRlFLanFUZAVpmZAnktYU5MVjJVVXdFd1B4NFRtdDJsVXdCSjZAFQTNJM0syRGs2dEllUGJWbFYwSwZDZD",
 };
 
 /*
