@@ -14,18 +14,25 @@ export class InterceptorService implements HttpInterceptor {
 
     // console.log(req);
 
-    if(req.method === "POST"){
-
-      this.loader.isLoading.next(true);
+    this.loader.isLoading.next(true);
       return next.handle(req).pipe(
         finalize(() => {
           this.loader.isLoading.next(false);
         })
       );
 
-    }
+    // if(req.method === "POST"){
 
-    return next.handle(req);
+    //   this.loader.isLoading.next(true);
+    //   return next.handle(req).pipe(
+    //     finalize(() => {
+    //       this.loader.isLoading.next(false);
+    //     })
+    //   );
+
+    // }
+
+    // return next.handle(req);
 
     
   }
