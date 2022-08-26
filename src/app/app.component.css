@@ -85,6 +85,10 @@ header.is-scrolling .menu ul li a{
     background-color: rgba(0, 0, 0, .6);
 }
 
+.loading ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: var(--primary-color);
+}
+
 footer .background{
     opacity: .2;
     background-image: url('../assets/images/patterns/p.png');

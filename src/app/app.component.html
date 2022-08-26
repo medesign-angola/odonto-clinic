@@ -41,7 +41,7 @@
 </header>
 
 <div *ngIf="loader.isLoading | async" class="loading fixed w-full h-full opacity-[1] text-white z-10 flex items-center justify-center box-border">
-  <mat-spinner class="" style="stroke: var(--primary-color);"></mat-spinner>
+  <mat-spinner color="warn" class="" style="stroke: yellow;"></mat-spinner>
 </div>
 
 <div class="fixed-social-media mobile:hidden desktop:block fixed z-[10]" [ngClass]="{'shown': !this.isSocialMediaHide, 'hide': this.isSocialMediaHide}">
