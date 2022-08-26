@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { LoaderService } from './app-services/loader/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild }
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(public loader: LoaderService) { }
 
   isSocialMediaHide: boolean = false;
   color: string = "white";

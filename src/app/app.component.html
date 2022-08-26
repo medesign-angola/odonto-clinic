@@ -1,3 +1,4 @@
+
 <header class="bg-orange-0" #containHeader [ngClass]="{'is-scrolling': this.hasHeaderToChange}">
   <div class="contain bg-slate-0">
     <nav class="flex mobile:flex-row-reverse desktop:flex-row justify-between items-center">
@@ -39,6 +40,9 @@
   </div>
 </header>
 
+<div *ngIf="loader.isLoading | async" class="loading fixed w-full h-full opacity-[1] text-white z-10 flex items-center justify-center box-border">
+  <mat-spinner class="" style="stroke: var(--primary-color);"></mat-spinner>
+</div>
 
 <div class="fixed-social-media mobile:hidden desktop:block fixed z-[10]" [ngClass]="{'shown': !this.isSocialMediaHide, 'hide': this.isSocialMediaHide}">
   <div class="box bg-secondary relative flex flex-col justify-center items-center px-2 py-7 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
@@ -57,7 +61,6 @@
   </div>
   <div class="lateral-bar bg-primary w-[12px] h-[151px]"></div>
 </div>
-
 
 <div class="banner relative bg-green-30 overflow-hidden" #home>
   <app-banner class="mobile:hidden desktop:block"></app-banner>

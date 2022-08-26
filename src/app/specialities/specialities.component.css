@@ -70,3 +70,10 @@
     border-radius: 4px;
     /* display: none; */
 }
+
+.spec-slide{
+    scrollbar-width: none;
+}
+.image-container{
+    scrollbar-width: none;
+}

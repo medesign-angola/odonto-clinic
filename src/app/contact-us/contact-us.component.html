@@ -1,4 +1,4 @@
-<div class="contain w-[90%] mx-auto mobile:py-5 desktop:py-20">
+<div class="contain w-[90%] relative mx-auto mobile:py-5 desktop:py-20">
     <div class="content flex flex-row flex-row-reverse">
         <div class="left-content flex flex-col bg-green-0 p-0">
             <div class="title-section mb-3">
@@ -8,21 +8,21 @@
                 <h1 class="text-secondary mobile:text-[20px] mobile:text-center desktop:text-left desktop:text-[45px] font-bold">Não espere muito para ter um sorriso lindo! Contacte-nos.</h1>
             </div>
             <div class="contact-form mb-0">
-                <form [formGroup]="this.form" action="" method="POST" class="block">
+                <form [formGroup]="form" method="post" class="block">
                     <div class="input">
-                        <input type="text" name="" [ngClass]="{'invalid': (this.isNameInvalid && this.form.get('nome').touched) || this.isNameInvalid}" (keyup)="isNameInvalidFunction()" placeholder="Nome Completo" formControlName="nome" id="">
+                        <input type="text" [ngClass]="{'invalid': (this.isNameInvalid && this.form.get('nome').touched) || this.isNameInvalid}" (keyup)="isNameInvalidFunction()" placeholder="Nome Completo" formControlName="nome" id="">
                     </div>
                     <div class="input">
-                        <input type="text" name="" [ngClass]="{'invalid': (this.isSubjectInvalid && this.form.get('assunto').touched) || this.isSubjectInvalid}" (keyup)="isSubjectInvalidFunction()" placeholder="Assunto" formControlName="assunto" formControlName="assunto" id="">
+                        <input type="text" [ngClass]="{'invalid': (this.isSubjectInvalid && this.form.get('assunto').touched) || this.isSubjectInvalid}" (keyup)="isSubjectInvalidFunction()" placeholder="Assunto" formControlName="assunto" id="">
                     </div>
                     <div class="input">
-                        <input type="email" name="" [ngClass]="{'invalid': (this.isEmailInvalid && this.form.get('email').touched) || this.isEmailInvalid}" (keyup)="isEmailInvalidFunction()" placeholder="Email" formControlName="email" id="">
+                        <input type="email" [ngClass]="{'invalid': (this.isEmailInvalid && this.form.get('email').touched) || this.isEmailInvalid}" (keyup)="isEmailInvalidFunction()" placeholder="Email" formControlName="email" id="">
                     </div>
                     <div class="input">
-                        <textarea name="" id="" [ngClass]="{'invalid': (this.isMessageInvalid && this.form.get('mensagem').touched) || this.isMessageInvalid}" (keyup)="isMessageInvalidFunction()" placeholder="Escreva aqui a sua mensagem" formControlName="mensagem"></textarea>
+                        <textarea id="" [ngClass]="{'invalid': (this.isMessageInvalid && this.form.get('mensagem').touched) || this.isMessageInvalid}" (keyup)="isMessageInvalidFunction()" placeholder="Escreva aqui a sua mensagem" formControlName="mensagem"></textarea>
                     </div>
                     <div class="input btn">
-                        <button type="submit" (click)="send_email()">Enviar mensagem</button>
+                        <button type="submit" [disabled]="this.form.invalid" (click)="send_email()">Enviar mensagem</button>
                     </div>
                 </form>
             </div>
@@ -32,5 +32,8 @@
                 <img src="assets/images/contact-us/image1.png" alt="">
             </div>
         </div>
+    </div>
+    <div class="msm" *ngIf="this.message">
+        {{this.message.mensagem}}
     </div>
 </div>

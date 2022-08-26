@@ -9,9 +9,6 @@ export class ApiServicesService {
 
   constructor(private http: HttpClient) { }
 
-  protected DOMAIN_URL: string = "https://odontoclinic.ao/"; 
-  protected apiMensagensUrl = this.DOMAIN_URL + "api_send_email/";
-
   getInstaPosts(){
 
     var limit = 6;
@@ -23,7 +20,11 @@ export class ApiServicesService {
   }
 
   send_email(messageBody: any){
-    return this.http.post<any>(this.apiMensagensUrl, messageBody);
+    
+    const DOMAIN_URL: string = "https://odontoclinic.ao/"; 
+    const apiMensagensUrl = DOMAIN_URL + "api_send_email/";
+
+    return this.http.post<any>(apiMensagensUrl, messageBody);
   }
 
 }

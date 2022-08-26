@@ -14,7 +14,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BannerMobileComponent } from './banner-mobile/banner-mobile.component';
 import { PostsComponent } from './posts/posts.component';
 import { ApiServicesService } from './app-services/api-services.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { InterceptorService } from './app-services/loader/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -34,10 +37,15 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [
-    ApiServicesService
+    ApiServicesService,
+    {
+      provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

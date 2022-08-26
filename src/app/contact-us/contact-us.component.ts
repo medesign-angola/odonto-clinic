@@ -12,6 +12,7 @@ export class ContactUsComponent implements OnInit {
   constructor(private api: ApiServicesService) { }
 
   form: any;
+  message: any;
 
   isNameInvalid: boolean = false;
   isSubjectInvalid: boolean = false;
@@ -44,13 +45,18 @@ export class ContactUsComponent implements OnInit {
       formData.append('email', this.form.get('email').value);
       formData.append('mensagem', this.form.get('mensagem').value);
 
-      console.log(formData);
+      // console.log(formData);
 
-      // this.api.send_email(formData).subscribe(data => {
-      //   console.log(data);
+      this.api.send_email(formData).subscribe(data => {
+        // console.log(data);
 
-      //   this.form.reset();
-      // });
+        this.message = {
+          estado: data.estado,
+          mensagem: data.mensagem
+        };
+
+        this.form.reset();
+      });
       // window.alert("Sem ação nenhuma, de momento.");
 
     }else{

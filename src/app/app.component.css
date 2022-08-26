@@ -81,6 +81,10 @@ header.is-scrolling .menu ul li a{
     /* background-color: red; */
 }
 
+.loading{
+    background-color: rgba(0, 0, 0, .6);
+}
+
 footer .background{
     opacity: .2;
     background-image: url('../assets/images/patterns/p.png');

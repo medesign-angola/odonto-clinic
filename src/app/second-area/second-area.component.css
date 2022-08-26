@@ -12,10 +12,14 @@
 .contain{
     max-width: var(--div-max-width);
     margin: 0px auto;
+    scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
     /* width: 200px; */
     height: 5px;
     display: none;
+}
+.mother-box{
+    scrollbar-width: none;
 }
