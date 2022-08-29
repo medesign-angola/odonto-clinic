@@ -32,25 +32,34 @@
         </ul>
         <div class="visit mx-[20px] justify-start items-center gap-2 mt-4 mobile:flex desktop:hidden">
           <p class="text-secondary">Visite-nos: </p>
-          <img src="assets/images/icons/facebook-mobile.svg" alt="">
-          <img src="assets/images/icons/instagram-mobile.svg" alt="">
+          <a class="cursor-pointer" (click)="openFacebook()">
+            <img src="assets/images/icons/facebook-mobile.svg" alt="">
+          </a>
+          <a class="cursor-pointer" (click)="openInstagram()">
+            <img src="assets/images/icons/instagram-mobile.svg" alt="">
+          </a>
         </div>
       </div>
     </nav>
   </div>
 </header>
 
-<div *ngIf="loader.isLoading | async" class="loading fixed w-full h-full opacity-[1] text-white z-10 flex items-center justify-center box-border">
-  <mat-spinner color="warn" class="" style="stroke: yellow;"></mat-spinner>
+<div *ngIf="loader.isLoading | async" class="loading fixed w-full h-full text-white z-10 flex items-center justify-center box-border">
+  <mat-spinner color="warn" class=""></mat-spinner>
 </div>
+
 
 <div class="fixed-social-media mobile:hidden desktop:block fixed z-[10]" [ngClass]="{'shown': !this.isSocialMediaHide, 'hide': this.isSocialMediaHide}">
   <div class="box bg-secondary relative flex flex-col justify-center items-center px-2 py-7 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
     <div class="close p-2 bg-primary rounded-full absolute -left-[10px] -top-[10px] cursor-pointer" (click)="toggleSocialMediaBox()">
       <img src="assets/images/icons/close-fixed-box.svg" alt="">
     </div>
-    <img src="assets/images/icons/fixed-box-facebook.svg" alt="">
-    <img src="assets/images/icons/fixed-box-instagram.svg" alt="">
+    <a class="cursor-pointer mb-1" (click)="openFacebook()">
+      <img src="assets/images/icons/fixed-box-facebook.svg" alt="">
+    </a>
+    <a class="cursor-pointer" (click)="openInstagram()">
+      <img src="assets/images/icons/fixed-box-instagram.svg" alt="">
+    </a>
   </div>
 </div>
 

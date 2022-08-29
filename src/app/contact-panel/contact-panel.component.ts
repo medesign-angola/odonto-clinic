@@ -12,4 +12,8 @@ export class ContactPanelComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  callMe(){
+    window.open('tel:+244927963432');
+  }
+
 }

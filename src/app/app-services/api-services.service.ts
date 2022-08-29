@@ -12,7 +12,7 @@ export class ApiServicesService {
   getInstaPosts(){
 
     var limit = 6;
-    const access_token = "IGQVJVcWVSY0FiLXZAqbFdPQXRDdnNsUFZAva3hMRkNLblc2SHYybkhMbUtuUXVpWWh6blZASSHRqVmtIRlFLanFUZAVpmZAnktYU5MVjJVVXdFd1B4NFRtdDJsVXdCSjZAFQTNJM0syRGs2dEllUGJWbFYwSwZDZD"; // Clinic Account
+    const access_token = "IGQVJYQVdKUzYxbTJBcURLOEdiRVRIQ3luZA1JMbmZANV3Fpd1BPc2JSNnR3MGVKR25uWkxyU05MYXMyUzdnY3hJR0IxNlNqem4tQmVlZAVl5eXdLWlJvX1ZAVeHlEb3liZAGprTEsyNGtJM0t2YjFNbW5qNgZDZD"; // Clinic Account
     const url = `https://graph.instagram.com/me/media?access_token=${access_token}&fields=media_url,caption,permalink&limit=${limit}`;
 
     return this.http.get(url);

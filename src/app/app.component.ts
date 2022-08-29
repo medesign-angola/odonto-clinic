@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Message } from './app-model';
 import { LoaderService } from './app-services/loader/loader.service';
 
 @Component({
@@ -64,6 +65,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.isSocialMediaHide = !this.isSocialMediaHide;
   }
 
+  openFacebook(){
+    window.open('https://www.facebook.com/Odonto-Clinicao-105835335550321', '_blank');
+  }
+
+  openInstagram(){
+    window.open('https://www.instagram.com/odonto_clinic.ao', '_blank');
+  }
+
   scrollTo(element: HTMLElement){
     scrollTo(0, element.offsetTop - 90);
     
@@ -73,5 +82,4 @@ export class AppComponent implements OnInit, AfterViewInit {
   menuToggle(){
     this.isMenuHidden = !this.isMenuHidden;
   }
-
 }

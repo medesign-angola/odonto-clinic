@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiServicesService } from '../app-services/api-services.service';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-contact-us',
@@ -8,11 +9,12 @@ import { ApiServicesService } from '../app-services/api-services.service';
   styleUrls: ['./contact-us.component.css', './contact-us.component.resp.css']
 })
 export class ContactUsComponent implements OnInit {
-
+  
   constructor(private api: ApiServicesService) { }
 
   form: any;
   message: any;
+  hasPanelToShow: boolean = false;
 
   isNameInvalid: boolean = false;
   isSubjectInvalid: boolean = false;
@@ -54,6 +56,13 @@ export class ContactUsComponent implements OnInit {
           estado: data.estado,
           mensagem: data.mensagem
         };
+
+        
+        this.hasPanelToShow = true;
+
+        setTimeout(() => {
+          this.hasPanelToShow = false;
+        }, 3000);
 
         this.form.reset();
       });

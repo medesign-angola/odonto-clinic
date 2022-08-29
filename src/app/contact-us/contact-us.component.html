@@ -33,7 +33,17 @@
             </div>
         </div>
     </div>
-    <div class="msm" *ngIf="this.message">
-        {{this.message.mensagem}}
+</div>
+<div class="message fixed top-0 left-0 w-full h-full z-10 flex items-center justify-center box-border" *ngIf="this.hasPanelToShow" >
+    <div class="panel bg-white p-10 rounded-[4px] w-[400px] flex items-center flex-col">
+      <div class="msg">
+        <div class="icon flex justify-center">
+          <img src="assets/images/icons/ok.svg" *ngIf="this.message.estado == 'Sucesso'" alt="">
+          <img src="assets/images/icons/close.svg" *ngIf="this.message.estado == 'Erro'" alt="">
+        </div>
+        <div class="message-text pt-10 text-center">
+          {{this.message.mensagem}}
+        </div>
+      </div>
     </div>
 </div>

@@ -66,3 +66,33 @@
 .contact-form form > div button:disabled{
     opacity: .6;
 }
+
+.message{
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.message.show{
+    animation: fadeIn ease-in-out .6s;
+}
+.message.hide{
+    animation: fadeOut ease-out .6s;
+}
+
+/* @keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        display: none;
+    }
+} */
