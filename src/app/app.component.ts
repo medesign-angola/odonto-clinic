@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Message } from './app-model';
+import { LinkOpenService } from './app-services/link-open.service';
 import { LoaderService } from './app-services/loader/loader.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { LoaderService } from './app-services/loader/loader.service';
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  constructor(public loader: LoaderService) { }
+  constructor(public loader: LoaderService, private linkOpen: LinkOpenService) { }
 
   isSocialMediaHide: boolean = false;
   color: string = "white";
@@ -66,11 +67,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   openFacebook(){
-    window.open('https://www.facebook.com/Odonto-Clinicao-105835335550321', '_blank');
+    this.linkOpen.openFacebook();
   }
 
   openInstagram(){
-    window.open('https://www.instagram.com/odonto_clinic.ao', '_blank');
+    this.linkOpen.openInstagram();
   }
 
   scrollTo(element: HTMLElement){

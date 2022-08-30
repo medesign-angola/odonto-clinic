@@ -30,7 +30,7 @@ import { InterceptorService } from './app-services/loader/interceptor.service';
     ContactUsComponent,
     ContactPanelComponent,
     BannerMobileComponent,
-    PostsComponent
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
