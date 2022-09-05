@@ -14,4 +14,9 @@ export class LinkOpenService {
   openInstagram(){
     window.open('https://www.instagram.com/odonto_clinic.ao', '_blank');
   }
+
+  openWhatsapp(){
+    // Pending the whatsapp phone
+    window.open("https://wa.me/+244927963432", "_blank");
+  }
 }

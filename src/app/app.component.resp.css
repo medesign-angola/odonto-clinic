@@ -31,4 +31,10 @@
         font-weight: 500;
     }
     .menu ul li a:hover{}
+
+    header{
+        position: relative;
+        top: 0px;
+        background-color: #fff;
+    }
 }

@@ -1,165 +1,171 @@
-
-<header class="bg-orange-0" #containHeader [ngClass]="{'is-scrolling': this.hasHeaderToChange}">
-  <div class="contain bg-slate-0">
-    <nav class="flex mobile:flex-row-reverse desktop:flex-row justify-between items-center">
-      <div class="logo mobile:hidden desktop:block bg-white" [innerHTML]="this.logoImage">
-        <!-- <img src="assets/images/logo/logo-desktop.svg" alt="Odonto Clinic"> -->
-      </div>
-
-      <div class="logo-menu-hidden mobile:block desktop:hidden" [innerHTML]="this.logoMobileImage">
-        <!-- <img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt=""> -->
-      </div>
-      <div class="menu-hamburger mobile:block desktop:hidden" [innerHTML]="this.mobileMenuIcon" (click)="this.menuToggle()">
-        <!-- <img src="assets/images/icons/menu-icon-hamburger.svg" alt=""> -->
-      </div>
-
-      <div class="menu" [ngClass]="{'show': !this.isMenuHidden, 'hide': this.isMenuHidden}">
-        <div class="mobile-menu-header bg-yellow-00 mobile:flex desktop:hidden my-[20px] mx-[20px] flex justify-between items-center">
-          <div class="close-btn bg-green-00" (click)="this.menuToggle()">
-            <img src="assets/images/icons/close-mobile-menu.svg" alt="">
-          </div>
-          <div class="logo-menu-header">
-            <img src="assets/images/logo/logo-mobile-white-bg.svg" alt="">
-          </div>
-        </div>
-        <hr class="mobile:block desktop:hidden">
-        <ul>
-          <li><a routerLink="" (click)="scrollTo(home)">Home</a></li>
-          <li><a routerLink="" (click)="scrollTo(about)">Nossa Clínica</a></li>
-          <li><a routerLink="" (click)="scrollTo(specialities)">Especialidades</a></li>
-          <li><a routerLink="" (click)="scrollTo(contact)">Contactos</a></li>
-          <li><a routerLink="" (click)="scrollTo(results)">Resultados</a></li>
-        </ul>
-        <div class="visit mx-[20px] justify-start items-center gap-2 mt-4 mobile:flex desktop:hidden">
-          <p class="text-secondary">Visite-nos: </p>
-          <a class="cursor-pointer" (click)="openFacebook()">
-            <img src="assets/images/icons/facebook-mobile.svg" alt="">
-          </a>
-          <a class="cursor-pointer" (click)="openInstagram()">
-            <img src="assets/images/icons/instagram-mobile.svg" alt="">
-          </a>
-        </div>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<div *ngIf="loader.isLoading | async" class="loading fixed w-full h-full text-white z-10 flex items-center justify-center box-border">
-  <mat-spinner color="warn" class=""></mat-spinner>
-</div>
-
-
-<div class="fixed-social-media mobile:hidden desktop:block fixed z-[10]" [ngClass]="{'shown': !this.isSocialMediaHide, 'hide': this.isSocialMediaHide}">
-  <div class="box bg-secondary relative flex flex-col justify-center items-center px-2 py-7 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
-    <div class="close p-2 bg-primary rounded-full absolute -left-[10px] -top-[10px] cursor-pointer" (click)="toggleSocialMediaBox()">
-      <img src="assets/images/icons/close-fixed-box.svg" alt="">
-    </div>
-    <a class="cursor-pointer mb-1" (click)="openFacebook()">
-      <img src="assets/images/icons/fixed-box-facebook.svg" alt="">
-    </a>
-    <a class="cursor-pointer" (click)="openInstagram()">
-      <img src="assets/images/icons/fixed-box-instagram.svg" alt="">
-    </a>
-  </div>
-</div>
-
-<div class="fixed-social-media mobile:hidden desktop:flex arow p-0 fixed z-[10] flex bg-orange-00 items-center" [ngClass]="{'shown': this.isSocialMediaHide, 'hide': !this.isSocialMediaHide}">
-  <div class="box bg-secondary relative flex flex-col justify-center items-center px-1 py-3 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
-    <img src="assets/images/icons/social-media-box-arrow.svg" class="cursor-pointer" (click)="toggleSocialMediaBox()" alt="">
-    <!-- <span class="font-bold text-white text-2xl cursor-pointer" (click)="toggleSocialMediaBox()"><</span> -->
-  </div>
-  <div class="lateral-bar bg-primary w-[12px] h-[151px]"></div>
-</div>
-
-<div class="banner relative bg-green-30 overflow-hidden" #home>
-  <app-banner class="mobile:hidden desktop:block"></app-banner>
-  <app-banner-mobile class="mobile:block desktop:hidden"></app-banner-mobile>
-</div>
-<div class="second-boxes relative bg-green-40 py-10">
-  <app-second-area></app-second-area>
-</div>
-<div class="about bg-green-5000" #about>
-  <app-about-us></app-about-us>
-</div>
-<div class="specialities bg-green-00" #specialities>
-  <app-specialities></app-specialities>
-</div>
-<div class="contacts bg-green-00" #contact>
-  <app-contact-us></app-contact-us>
-</div>
-<div class="results bg-green-00" #results>
-  <app-results></app-results>
-</div>
-<div class="posts bg-green-00 mobile:hidden desktop:block" #posts>
-  <app-posts></app-posts>
-</div>
-
-<div class="whatsapp-fixed p-3 fixed flex justify-center items-center bottom-5 rounded-full left-5 z-[11] bg-[#0ba360]">
-  <div class="first-arc"></div>
-  <div class="second-arc"></div>
-  <div class="icon relative">
-    <img src="assets/images/icons/whatsapp.png" class="w-[30px]" alt="">
-  </div>
-</div>
-
-<footer class="bg-secondary relative mobile:py-10 desktop:py-20 mobile:px-0 desktop:px-10">
-  <div class="background absolute top-0 left-0 w-full h-full z-[1]"></div>
-
-  <div class="content contain relative w-[90%] mx-auto z-[2] bg-red-00 mb-20 flex mobile:flex-col desktop:flex-row justify-around items-center">
-
-    <div class="about flex flex-col mobile:hidden desktop:flex bg-green-00 mobile:w-full desktop:w-[350px]">
-      <div class="logo-desc mb-7">
-        <img src="assets/images/logo/footer-logo-description.svg" alt="">
-      </div>
-      <div class="text">
-        <p class="text-white opacity-[0.6]">Garantimos satisfação e resultados para nossos pacientes, somando resultados excelente por cada mês.</p>
-      </div>
-    </div>
-
-    <div class="attending mobile:text-center desktop:text-left bg-green00 mobile:w-full desktop:w-[300px]">
-      <div class="title mb-3">
-        <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Atendimentos</h1>
-      </div>
-      <div class="times-first mb-2">
-        <p class="text-white mobile:text-[12px] desktop:text-[16px]"><strong>Segunda-Feira</strong> - 8h:00 às 17h:00</p>
-      </div>
-      <div class="times-first">
-        <p class="text-white mobile:text-[12px] desktop:text-[16px]"><strong>Sábado e Domingo</strong> - 8h:00 às 12h:00</p>
-      </div>
-    </div>
-
-    <div class="contacts mobile:text-center mobile:mb-10 desktop:mb-0 desktop:text-left mobile:my-5 desktop:mt-0 bg-green-00 mobile:w-full desktop:w-[auto]">
-      <div class="title mb-3">
-        <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Contactos</h1>
-      </div>
-      <!-- <div class="contacts-desc relative mobile:flex mobile:flex-row mobile:justify-between mobile:items-center desktop:items-start desktop:flex"> -->
-      <div class="contacts-desc relative flex mobile:flex-col mobileL:flex-row mobileL:bg-orange-00 desktop:flex-col mobile:justify-between mobile:items-center desktop:items-start">
-        <div class="phones flex items-center justify-start gap-4 mobile:mb-0 desktop:mb-0">
-          <div class="icon mobile:w-[30px] bg-orange-00">
-            <img src="assets/images/icons/footer-phone.svg" alt="">
-          </div>
-          <div class="numbers">
-            <p class="text-white mobile:text-[12px] desktop:text-[16px]">+244 927 963 432 <br> +244 927 963 335</p>
-          </div>
-        </div>
-
-        <div class="email flex items-center justify-start gap-4 mobile:mt-3 mobileL:mt-0 dektop:mt-0">
-          <div class="icon w-[30px] bg-orange-00">
-            <img src="assets/images/icons/footer-email.svg" alt="">
-          </div>
-          <div class="text">
-            <p class="text-white mobile:text-[12px] desktop:text-[16px]">geral@odontoclinic.ao</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
+<div class="body max-w-[1536px] relative mx-auto">
   
-  <div class="copyrights absolute bottom-0 left-0 w-full bg-orange-00 py-5 mt- text-center">
-    <p class="text-white mobile:text-[12px] desktop:text-[16px]">&copy; 2022 - Odonto Clinic. Todos os direitos reservados.</p>
+  <header class="bg-orange-0" #containHeader [ngClass]="{'is-scrolling-extend': this.hasHeaderToChange}">
+    <div class="contain bg-slate-0">
+      <nav class="flex mobile:flex-row-reverse desktop:flex-row justify-between items-center">
+        <div class="logo mobile:hidden desktop:block z-[1]" [innerHTML]="this.logoImage">
+          <!-- <img src="assets/images/logo/logo-desktop.svg" alt="Odonto Clinic"> -->
+        </div>
+
+        <div class="back-bg mobile:hidden desktop:block bg-white absolute w-[300px] h-full left-0 top-0 rounded-r-[100px]"></div>
+
+        <div class="logo-menu-hidden mobile:block desktop:hidden" [innerHTML]="this.logoMobileImage">
+          <!-- <img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt=""> -->
+        </div>
+        <div class="menu-hamburger mobile:block desktop:hidden" [innerHTML]="this.mobileMenuIcon" (click)="this.menuToggle()">
+          <!-- <img src="assets/images/icons/menu-icon-hamburger.svg" alt=""> -->
+        </div>
+
+        <div class="menu z-[1]" [ngClass]="{'show': !this.isMenuHidden, 'hide': this.isMenuHidden}">
+          <div class="mobile-menu-header bg-yellow-00 mobile:flex desktop:hidden my-[20px] mx-[20px] flex justify-between items-center">
+            <div class="close-btn bg-green-00" (click)="this.menuToggle()">
+              <img src="assets/images/icons/close-mobile-menu.svg" alt="">
+            </div>
+            <div class="logo-menu-header">
+              <img src="assets/images/logo/logo-mobile-white-bg.svg" alt="">
+            </div>
+          </div>
+          <hr class="mobile:block desktop:hidden">
+          <ul>
+            <li><a routerLink="" (click)="scrollTo(home)">Home</a></li>
+            <li><a routerLink="" (click)="scrollTo(about)">Nossa Clínica</a></li>
+            <li><a routerLink="" (click)="scrollTo(specialities)">Especialidades</a></li>
+            <li><a routerLink="" (click)="scrollTo(contact)">Contactos</a></li>
+            <li><a routerLink="" (click)="scrollTo(results)">Resultados</a></li>
+          </ul>
+          <div class="visit mx-[20px] justify-start items-center gap-2 mt-4 mobile:flex desktop:hidden">
+            <p class="text-secondary">Visite-nos: </p>
+            <a class="cursor-pointer" (click)="openFacebook()">
+              <img src="assets/images/icons/facebook-mobile.svg" alt="">
+            </a>
+            <a class="cursor-pointer" (click)="openInstagram()">
+              <img src="assets/images/icons/instagram-mobile.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div *ngIf="loader.isLoading | async" class="loading fixed w-full h-full text-white z-10 flex items-center justify-center box-border">
+    <mat-spinner color="warn" class=""></mat-spinner>
   </div>
 
-</footer>
+
+  <div class="fixed-social-media mobile:hidden desktop:block fixed z-[10]" [ngClass]="{'shown': !this.isSocialMediaHide, 'hide': this.isSocialMediaHide}">
+    <div class="box bg-secondary relative flex flex-col justify-center items-center px-2 py-7 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
+      <div class="close p-2 bg-primary rounded-full absolute -left-[10px] -top-[10px] cursor-pointer" (click)="toggleSocialMediaBox()">
+        <img src="assets/images/icons/close-fixed-box.svg" alt="">
+      </div>
+      <a class="cursor-pointer mb-1" (click)="openFacebook()">
+        <img src="assets/images/icons/fixed-box-facebook.svg" alt="">
+      </a>
+      <a class="cursor-pointer" (click)="openInstagram()">
+        <img src="assets/images/icons/fixed-box-instagram.svg" alt="">
+      </a>
+    </div>
+  </div>
+
+  <div class="fixed-social-media mobile:hidden desktop:flex arow p-0 fixed z-[10] flex bg-orange-00 items-center" [ngClass]="{'shown': this.isSocialMediaHide, 'hide': !this.isSocialMediaHide}">
+    <div class="box bg-secondary relative flex flex-col justify-center items-center px-1 py-3 gap-3 rounded-tl-[4px] rounded-bl-[4px]">
+      <img src="assets/images/icons/social-media-box-arrow.svg" class="cursor-pointer" (click)="toggleSocialMediaBox()" alt="">
+      <!-- <span class="font-bold text-white text-2xl cursor-pointer" (click)="toggleSocialMediaBox()"><</span> -->
+    </div>
+    <div class="lateral-bar bg-primary w-[12px] h-[151px]"></div>
+  </div>
+
+  <div class="banner relative bg-green-30 overflow-hidden" #home>
+    <app-banner class="mobile:hidden desktop:block"></app-banner>
+    <app-banner-mobile class="mobile:block desktop:hidden"></app-banner-mobile>
+  </div>
+  <div class="second-boxes relative bg-green-40 py-10">
+    <app-second-area></app-second-area>
+  </div>
+  <div class="about bg-green-5000" #about>
+    <app-about-us></app-about-us>
+  </div>
+  <div class="specialities bg-green-00" #specialities>
+    <app-specialities></app-specialities>
+  </div>
+  <div class="contacts bg-green-00" #contact>
+    <app-contact-us></app-contact-us>
+  </div>
+  <div class="results bg-green-00" #results>
+    <app-results></app-results>
+  </div>
+  <div class="posts bg-green-00 mobile:hidden desktop:block" #posts>
+    <app-posts></app-posts>
+  </div>
+
+  <div class="relative">
+    <div class="whatsapp-fixed cursor-pointer p-3 fixed flex justify-center items-center bottom-5 rounded-full left-5 z-[11] bg-[#0ba360]" (click)="openWhatsapp()">
+      <div class="first-arc"></div>
+      <div class="second-arc"></div>
+      <div class="icon relative">
+        <img src="assets/images/icons/whatsapp.png" class="w-[30px]" alt="">
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-secondary relative mobile:py-10 desktop:py-20 mobile:px-0 desktop:px-10">
+    <div class="background absolute top-0 left-0 w-full h-full z-[1]"></div>
+
+    <div class="content contain relative w-[90%] mx-auto z-[2] bg-red-00 mb-20 flex mobile:flex-col desktop:flex-row justify-around items-center">
+
+      <div class="about flex flex-col mobile:hidden desktop:flex bg-green-00 mobile:w-full desktop:w-[350px]">
+        <div class="logo-desc mb-7">
+          <img src="assets/images/logo/footer-logo-description.svg" alt="">
+        </div>
+        <div class="text">
+          <p class="text-white opacity-[0.6]">Garantimos satisfação e resultados para nossos pacientes, somando resultados excelente por cada mês.</p>
+        </div>
+      </div>
+
+      <div class="attending mobile:text-center desktop:text-left bg-green00 mobile:w-full desktop:w-[300px]">
+        <div class="title mb-3">
+          <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Atendimentos</h1>
+        </div>
+        <div class="times-first mb-2">
+          <p class="text-white mobile:text-[12px] desktop:text-[16px]"><strong>Segunda-Feira</strong> - 8h:00 às 17h:00</p>
+        </div>
+        <div class="times-first">
+          <p class="text-white mobile:text-[12px] desktop:text-[16px]"><strong>Sábado e Domingo</strong> - 8h:00 às 12h:00</p>
+        </div>
+      </div>
+
+      <div class="contacts mobile:text-center mobile:mb-10 desktop:mb-0 desktop:text-left mobile:my-5 desktop:mt-0 bg-green-00 mobile:w-full desktop:w-[auto]">
+        <div class="title mb-3">
+          <h1 class="font-bold mobile:text-[20px] desktop:text-[30px] text-white">Contactos</h1>
+        </div>
+        <!-- <div class="contacts-desc relative mobile:flex mobile:flex-row mobile:justify-between mobile:items-center desktop:items-start desktop:flex"> -->
+        <div class="contacts-desc relative flex mobile:flex-col mobileL:flex-row mobileL:bg-orange-00 desktop:flex-col mobile:justify-between mobile:items-center desktop:items-start">
+          <div class="phones flex items-center justify-start gap-4 mobile:mb-0 desktop:mb-0">
+            <div class="icon mobile:w-[30px] bg-orange-00">
+              <img src="assets/images/icons/footer-phone.svg" alt="">
+            </div>
+            <div class="numbers">
+              <p class="text-white mobile:text-[12px] desktop:text-[16px]">+244 927 963 432 <br> +244 927 963 335</p>
+            </div>
+          </div>
+
+          <div class="email flex items-center justify-start gap-4 mobile:mt-3 mobileL:mt-0 dektop:mt-0">
+            <div class="icon w-[30px] bg-orange-00">
+              <img src="assets/images/icons/footer-email.svg" alt="">
+            </div>
+            <div class="text">
+              <p class="text-white mobile:text-[12px] desktop:text-[16px]">geral@odontoclinic.ao</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    
+    <div class="copyrights absolute bottom-0 left-0 w-full bg-orange-00 py-5 mt- text-center">
+      <p class="text-white mobile:text-[12px] desktop:text-[16px]">&copy; 2022 - Odonto Clinic. Todos os direitos reservados.</p>
+    </div>
+
+  </footer>
+</div>

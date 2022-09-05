@@ -1,134 +1,14 @@
 <div class="content-all">
-  <!-- <section class="background w-full h-full bg-black opacity-50 z-[1] absolute left-0 top-0"></section> -->
-
-  <!-- <div class="all-slide-images relative h-[90vh]">
-
-    <div class="slide relative w-full h-full bg-yellow-0" [ngClass]="
-    {
-      'present' : this.firstImageTime == 'present',
-      'past-one' : this.firstImageTime == 'past-one',
-      'past-two' : this.firstImageTime == 'past-two',
-      'past-three' : this.firstImageTime == 'past-three',
-      'past-four' : this.firstImageTime == 'past-four',
-      'future' : this.firstImageTime == 'future'
-    }
-    ">
-      <img src="assets/images/banner/image1.png" alt="">
-
-      <div class="info w-[90%] absolute bg-yellow-0 py-0 top-[50%] left-[50%] -translate-x-[50%] z-[2] ml-30">
-        <div class="content bg-green-0 w-[500px] flex flex-col">
-            <p class="text-white text-[38px] desktop:text-[52px] font-semibold text-left">O <span class="text-primary">sorriso</span> é o seu cartão de visitas.</p>
-        </div>
-      </div>  
-    </div>
-
-    <div class="slide relative w-full h-full bg-yellow-0" [ngClass]="
-    {
-      'present' : this.secondImageTime == 'present',
-      'past-one' : this.secondImageTime == 'past-one',
-      'past-two' : this.secondImageTime == 'past-two',
-      'past-three' : this.secondImageTime == 'past-three',
-      'past-four' : this.secondImageTime == 'past-four',
-      'future' : this.secondImageTime == 'future'
-    }
-    ">
-        <img src="assets/images/banner/image2.png" alt="">
-
-        <div class="info w-[90%] absolute bg-yellow-0 py-0 top-[50%] left-[50%] -translate-x-[50%] z-[2] ml-30">
-          <div class="content bg-green-0 w-[600px] flex flex-col">
-              <p class="text-white text-[38px] desktop:text-[52px] font-semibold text-left">Todo <span class="text-primary">sorriso</span> faz você um dia mais jovem.</p>
-          </div>
-        </div>  
-    </div>
-
-    <div class="slide relative w-full h-full bg-yellow-0" [ngClass]="
-    {
-      'present' : this.thirdImageTime == 'present',
-      'past-one' : this.thirdImageTime == 'past-one',
-      'past-two' : this.thirdImageTime == 'past-two',
-      'past-three' : this.thirdImageTime == 'past-three',
-      'past-four' : this.thirdImageTime == 'past-four',
-      'future' : this.thirdImageTime == 'future'
-    }
-    ">
-      <img src="assets/images/banner/image3.png" alt="">
-
-      <div class="info w-[90%] absolute bg-yellow-0 py-0 top-[50%] left-[50%] -translate-x-[50%] z-[2] ml-30">
-        <div class="content bg-green-0 w-[600px] flex flex-col">
-            <p class="text-white text-[38px] desktop:text-[52px] font-semibold text-left">Todo <span class="text-primary">sorriso</span> faz você um dia mais jovem.</p>
-        </div>
-      </div>  
-    </div>
-
-    <div class="slide relative w-full h-full bg-yellow-0" [ngClass]="
-    {
-      'present' : this.fourthImageTime == 'present',
-      'past-one' : this.fourthImageTime == 'past-one',
-      'past-two' : this.fourthImageTime == 'past-two',
-      'past-three' : this.fourthImageTime == 'past-three',
-      'past-four' : this.fourthImageTime == 'past-four',
-      'future' : this.fourthImageTime == 'future'
-    }
-    ">
-      <img src="assets/images/banner/image4.png" alt="">
-
-      <div class="info w-[90%] absolute bg-yellow-0 py-0 top-[50%] left-[50%] -translate-x-[50%] z-[2] ml-30">
-        <div class="content bg-green-0 w-[920px] flex flex-col">
-            <p class="text-white text-[38px] desktop:text-[52px] font-semibold text-left">Produzir um <span class="text-primary">sorriso</span> é multiplicar a felicidade.</p>
-        </div>
-      </div>  
-    </div>
-
-    <div class="slide relative w-full h-full bg-yellow-0" [ngClass]="
-    {
-      'present' : this.fifthImageTime == 'present',
-      'past-one' : this.fifthImageTime == 'past-one',
-      'past-two' : this.fifthImageTime == 'past-two',
-      'past-three' : this.fifthImageTime == 'past-three',
-      'past-four' : this.fifthImageTime == 'past-four',
-      'future' : this.fifthImageTime == 'future'
-    }
-    ">
-      <img src="assets/images/banner/image5.png" alt="">
-
-      <div class="info w-[90%] absolute bg-yellow-0 py-0 top-[50%] left-[50%] -translate-x-[50%] z-[2] ml-30">
-        <div class="content bg-green-0 w-[920px] flex flex-col">
-            <p class="text-white text-[38px] desktop:text-[52px] font-semibold text-left">Sou dentista e o seu <span class="text-primary">sorriso</span> é o mais importante para mim.</p>
-        </div>
-      </div>  
-    </div>
-
-    <div class="slide relative w-full h-full bg-yellow-0" [ngClass]="
-    {
-      'present' : this.sixthImageTime == 'present',
-      'past-one' : this.sixthImageTime == 'past-one',
-      'past-two' : this.sixthImageTime == 'past-two',
-      'past-three' : this.sixthImageTime == 'past-three',
-      'past-four' : this.sixthImageTime == 'past-four',
-      'future' : this.sixthImageTime == 'future'
-    }
-    ">
-      <img src="assets/images/banner/image6.png" alt="">
-
-      <div class="info w-[90%] absolute bg-yellow-0 py-0 top-[50%] left-[50%] -translate-x-[50%] z-[2] ml-30">
-        <div class="content bg-green-0 w-[500px] flex flex-col">
-            <p class="text-white text-[38px] desktop:text-[52px] font-semibold text-left"><span class="text-primary">Sorria</span>, é terapia livre.</p>
-        </div>
-      </div>  
-    </div>
-
-  </div> -->
 
   <div class="slide relative w-full h-full">
-
     <img src="assets/images/banner/banner.png" alt="">
+
+    <div class="info w-[45%] absolute bg-yellow-00 py-0 top-[55%] -translate-y-[100%] left-[44%] -translate-x-[0%] z-[2] ml-30">
+      <div class="content bg-green-0 flex flex-col" [innerHTML]="this.presentSentence">
+          <!-- <p class="text-white text-[65px] font-bold text-left indent-[100px] animate-[fade]">O sorriso é o seu cartão de visitas.</p> -->
+      </div>
+    </div> 
+
   </div>
-
-
-  <!-- <div class="contact-panel w-[90%] absolute bg-yellow-0 py-0 top-[75%] left-[50%] -translate-x-[50%] z-[2] ml-30">
-    <div class="w-[25%]">
-      <app-contact-panel></app-contact-panel>
-    </div>
-  </div> -->
   
 </div>

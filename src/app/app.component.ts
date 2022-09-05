@@ -78,6 +78,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.linkOpen.openInstagram();
   }
 
+  openWhatsapp(){
+    this.linkOpen.openWhatsapp();
+  }
+
   scrollTo(element: HTMLElement){
     scrollTo(0, element.offsetTop - 90);
     
