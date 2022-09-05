@@ -21,11 +21,25 @@ div.slide img{
     position: absolute;
 }
 
-@keyframes fade {
+.info .content p{
+    text-align: left;
+    color: #fff;
+    font-size: 65px;
+    font-weight: bold;
+    text-indent: 100px;
+}
+
+.info .content p.not-active{
+    /* animation: fadeOut .9s ease-out; */
+}
+
+@keyframes fadeOut {
     from{
-        opacity: 0;
+        opacity: 1;
+        display: block;
     }
     to{
-        opacity: 1;
+        opacity: 0;
+        display: none;
     }
 }

@@ -3,9 +3,12 @@
   <div class="slide relative w-full h-full">
     <img src="assets/images/banner/banner.png" alt="">
 
-    <div class="info w-[45%] absolute bg-yellow-00 py-0 top-[55%] -translate-y-[100%] left-[44%] -translate-x-[0%] z-[2] ml-30">
-      <div class="content bg-green-0 flex flex-col" [innerHTML]="this.presentSentence">
-          <!-- <p class="text-white text-[65px] font-bold text-left indent-[100px] animate-[fade]">O sorriso é o seu cartão de visitas.</p> -->
+    <div class="info w-[45%] absolute bg-yellow-00 py-0 top-[60%] -translate-y-[100%] left-[44%] -translate-x-[0%] z-[2] ml-30">
+      <div class="content bg-green-0 flex flex-col">
+          <p class="" [@fade]="this.firstTextIsActive ? 'active' : 'not-active'">O sorriso é o seu cartão de visitas.</p>
+          <!-- <p class="" [@fade]="this.firstTextIsActive ? 'active' : 'not-active'" [ngClass]="{'not-active': !this.firstTextIsActive, 'active': this.firstTextIsActive}">O sorriso é o seu cartão de visitas.</p> -->
+          <p class="" [@fade]="this.secondTextIsActive ? 'active' : 'not-active'">O sorriso é o seu, o cuidado é nosso.</p>
+          <!-- <p class="" [@fade]="this.secondTextIsActive ? 'active' : 'not-active'"  [ngClass]="{'not-active': !this.secondTextIsActive, 'active': this.secondTextIsActive}">O sorriso é o seu, o cuidado é nosso.</p> -->
       </div>
     </div> 
 
