@@ -16,10 +16,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   color: string = "white";
   hasHeaderToChange: boolean = false;
   hasLogoToChange: boolean = false;
-  logoImage: string = '<img src="assets/images/logo/logo-desktop.svg" alt="Odonto Clinic">';
-  logoMobileImage: string = '<img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt="Odonto Clinic">';
+  // logoImage: string = '<img src="assets/images/logo/logo-desktop.svg" alt="Odonto Clinic">';
+  // logoMobileImage: string = '<img src="assets/images/logo/logo-mobile-menu-hidden.svg" alt="Odonto Clinic">';
 
-  mobileMenuIcon: string = '<img src="assets/images/icons/menu-icon-hamburger.svg" alt="">';
+  // mobileMenuIcon: string = '<img src="assets/images/icons/menu-icon-hamburger.svg" alt="">';
+
+  logoImage = '<img src="assets/images/logo/logo-desktop-white-bg.svg" alt="Odonto Clinic">';
+  logoMobileImage = '<img src="assets/images/logo/logo-mobile-white-bg.svg" alt="Odonto Clinic">';
+  mobileMenuIcon = '<img src="assets/images/icons/menu-icon-hamburger-white-bg.svg" alt="">';
 
   isMenuHidden:boolean = true;
 
@@ -40,13 +44,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     if(window.pageYOffset > this.containHeaderOffset){
       // console.log("passou");
       this.hasHeaderToChange = true;
-      this.hasLogoToChange = true;
+      // this.hasLogoToChange = true;
     }else{
       this.hasHeaderToChange = false;
-      this.hasLogoToChange = false;
+      // this.hasLogoToChange = false;
     }
 
-    this.changeLogo();
+    // this.changeLogo();
 
   }
 
