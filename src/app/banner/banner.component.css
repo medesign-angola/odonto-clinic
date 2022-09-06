@@ -20,19 +20,38 @@ div.slide img{
     display: inline-block;
     position: absolute;
 }
-
-.info .content p{
+.content ul{
+    background-color: red;
+    list-style: none;
+}
+.content ul li{
+    position: absolute;
+}
+.info .content span{
     text-align: left;
     color: #fff;
     font-size: 65px;
     font-weight: bold;
     text-indent: 100px;
 }
-
-.info .content p.not-active{
-    /* animation: fadeOut .9s ease-out; */
+.info .content span.active{
+    animation: fadeIn 2s ease-out;
+    /* animation-direction: alternate-reverse; */
+}
+.info .content span.not-active{
+    animation: fadeOut 1s ease-out;
 }
 
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        display: none;
+    }
+    100%{
+        opacity: 1;
+        display: block;
+    }
+}
 @keyframes fadeOut {
     from{
         opacity: 1;

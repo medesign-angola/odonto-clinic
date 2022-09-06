@@ -7,36 +7,40 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.css'],
   animations: [
-    trigger('fade', [
-      state('active', style({
-        opacity: 1,
-        display: 'block'
-      })),
-      state('not-active', style({
-        opacity: 0,
-        display: 'none'
-      })),
-      transition('open => close', [
-        animate('1s'),
-      ]),
-      transition('close => open', [
-        animate('1s'),
-      ])
-    ]),
+    // trigger('fade', [
+    //   state('appear', style({
+    //     opacity: 0,
+    //     display: 'block'
+    //   })),
+    //   state('disappear', style({
+    //     opacity: 0,
+    //     display: 'none'
+    //   })),
+    //   transition('active => not-active', [
+    //     animate('1s'),
+    //   ]),
+    //   transition('not-active => active', [
+    //     animate('1s'),
+    //   ])
+    // ]),
   ]
 })
 export class BannerComponent implements OnInit {
 
-  firstTextIsActive: boolean = true;
+  firstTextIsActive: boolean = false;
   secondTextIsActive: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
 
+    setTimeout(() => {
+      this.firstTextIsActive = true;
+    }, 1500);
+
     setInterval(() => {
-      this.firstTextIsActive = false;
-      this.secondTextIsActive = true;
+      this.firstTextIsActive = !this.firstTextIsActive;
+      this.secondTextIsActive = !this.secondTextIsActive;
 
     }, 5000)
   }
