@@ -3,13 +3,18 @@
   <div class="slide relative w-full h-full">
     <img src="assets/images/banner/banner.png" alt="">
 
-    <div class="info w-[45%] absolute bg-yellow-600 py-0 top-[60%] -translate-y-[100%] left-[44%] -translate-x-[0%] z-[2] ml-30">
-      <div class="content relative bg-green-300 flex flex-col">
+    <div class="info w-[45%] absolute bg-yellow-00 py-0 top-[38%] -translate-y-[100%] left-[44%] -translate-x-[0%] z-[2] ml-30">
+      <div class="content relative p-2 bg-green-00 flex flex-col">
         <ul>
           <li
           [ngClass]="{'active': this.firstTextIsActive, 'not-active': !this.firstTextIsActive}"
           ><span>O sorriso é o seu cartão de visitas.</span></li>
-          <!-- <li><span>O sorriso é o seu, o cuidado é nosso.</span></li> -->
+          <li 
+          [ngClass]="{'active': this.secondTextIsActive, 'not-active': !this.secondTextIsActive, 'not-active-off': this.secondTextIsActive == 'off'}"
+          ><span [innerHTML]="this.secondTextSentence"></span></li>
+          <li 
+          [ngClass]="{'active': this.thirdTextIsActive, 'not-active': !this.thirdTextIsActive, 'not-active-off': this.thirdTextIsActive == 'off'}"
+          ><span [innerHTML]="this.thirdTextSentence"></span></li>
         </ul>
       </div>
     </div> 

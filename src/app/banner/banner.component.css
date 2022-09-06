@@ -34,13 +34,19 @@ div.slide img{
     font-weight: bold;
     text-indent: 100px;
 }
-.info .content span.active{
-    animation: fadeIn 2s ease-out;
+.info .content li.active{
+    opacity: 1;
+    animation: fadeIn 1.7s ease-in-out;
     /* animation-direction: alternate-reverse; */
 }
-.info .content span.not-active{
-    animation: fadeOut 1s ease-out;
+.info .content li.not-active{
+    opacity: 0;
+    animation: fadeOut 1.7s ease-in-out;
 }
+/* 
+.info .content li.not-active-off{
+    display: none;
+} */
 
 @keyframes fadeIn {
     0%{
@@ -53,11 +59,11 @@ div.slide img{
     }
 }
 @keyframes fadeOut {
-    from{
+    0%{
         opacity: 1;
         display: block;
     }
-    to{
+    100%{
         opacity: 0;
         display: none;
     }

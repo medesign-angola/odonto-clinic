@@ -27,21 +27,55 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class BannerComponent implements OnInit {
 
-  firstTextIsActive: boolean = false;
-  secondTextIsActive: boolean = false;
+  firstTextIsActive: boolean = true;
+
+  secondTextIsActive: any = 'off';
+  secondTextSentence: string = '';
+
+  thirdTextIsActive: any = 'off';
+  thirdTextSentence: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
+    
+    this.secondTextIsActive = false;
+    this.thirdTextIsActive = false;
 
     setTimeout(() => {
-      this.firstTextIsActive = true;
+
+      this.secondTextSentence = 'O sorriso é o seu, o cuidado é nosso.'
+      this.thirdTextSentence = 'Estou testando um texto aleatório aqui.';
+
+
+      this.refresh();
     }, 1500);
+    
+  }
 
+  refresh(){
     setInterval(() => {
-      this.firstTextIsActive = !this.firstTextIsActive;
-      this.secondTextIsActive = !this.secondTextIsActive;
+      this.verification();
+    }, 3000)
+  }
 
-    }, 5000)
+  verification(){
+    if(this.firstTextIsActive){
+      this.firstTextIsActive = false;
+      this.secondTextIsActive = true;
+      this.thirdTextIsActive = false;
+    
+    }else if(this.secondTextIsActive){
+      this.firstTextIsActive = false;
+      this.secondTextIsActive = false;
+      this.thirdTextIsActive = true;
+      
+    }else if(this.thirdTextIsActive){
+      
+      this.firstTextIsActive = true;
+      this.secondTextIsActive = false;
+      this.thirdTextIsActive = false;
+
+    }
   }
 }
