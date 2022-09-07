@@ -3,19 +3,28 @@
   <div class="slide relative w-full h-full">
     <img src="assets/images/banner/banner.png" alt="">
 
-    <div class="info w-[45%] absolute bg-yellow-00 py-0 top-[38%] -translate-y-[100%] left-[44%] -translate-x-[0%] z-[2] ml-30">
+    <div class="info w-[40%] absolute bg-yellow-00 py-0 top-[60%] -translate-y-[100%] left-[70%] -translate-x-[50%] z-[2] ml-30">
       <div class="content relative p-2 bg-green-00 flex flex-col">
-        <ul>
-          <li
-          [ngClass]="{'active': this.firstTextIsActive, 'not-active': !this.firstTextIsActive}"
-          ><span>O sorriso é o seu cartão de visitas.</span></li>
-          <li 
-          [ngClass]="{'active': this.secondTextIsActive, 'not-active': !this.secondTextIsActive, 'not-active-off': this.secondTextIsActive == 'off'}"
-          ><span [innerHTML]="this.secondTextSentence"></span></li>
-          <li 
-          [ngClass]="{'active': this.thirdTextIsActive, 'not-active': !this.thirdTextIsActive, 'not-active-off': this.thirdTextIsActive == 'off'}"
-          ><span [innerHTML]="this.thirdTextSentence"></span></li>
-        </ul>
+        <div class="first-text"
+        [ngClass]="{'active': this.firstTextIsActive, 'not-active': !this.firstTextIsActive}"
+        >
+          <p><span class="trns-one">O sorriso é o seu </span></p>
+          <p><span class="trns-two">cartão de visitas.</span></p>
+        </div>
+
+        <div class="second-text"
+        [ngClass]="{'active': this.secondTextIsActive, 'not-active': !this.secondTextIsActive}"
+        >
+          <p><span class="trns-one">Estou testando </span></p>
+          <p><span class="trns-two">um texto aqui.</span></p>
+        </div>
+
+        <div class="second-text"
+        [ngClass]="{'active': this.thirdTextIsActive, 'not-active': !this.thirdTextIsActive}"
+        >
+          <p><span class="trns-one">Estou testando mais </span></p>
+          <p><span class="trns-two">um texto aqui.</span></p>
+        </div>
       </div>
     </div> 
 
