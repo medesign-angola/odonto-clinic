@@ -27,6 +27,9 @@ div.slide img{
 .content ul li{
     position: absolute;
 }
+.info .content p:nth-last-child(1){
+    text-indent: 55px;
+}
 .info .content span{
     text-align: left;
     color: #fff;
@@ -41,17 +44,17 @@ div.not-active{
     display: none;
 }
 .trns-one{
-    animation: slide-left 2s ease-in-out;
+    animation: slide-left 1.8s ease-in-out;
 }
 
 .trns-two{
-    animation: slide-right 2s ease-in-out;
+    animation: slide-right 1.8s ease-in-out;
 }
 
 @keyframes slide-left {
     0%{
         /* opacity: 0; */
-        margin-left: -100px;
+        margin-left: -70px;
     }
     100%{
         /* opacity: 1; */
@@ -61,7 +64,7 @@ div.not-active{
 @keyframes slide-right {
     0%{
         /* opacity: 0; */
-        margin-left: 100px;
+        margin-left: 500px;
     }
     100%{
         /* opacity: 1; */
