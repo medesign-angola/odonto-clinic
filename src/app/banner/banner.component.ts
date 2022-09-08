@@ -39,18 +39,18 @@ export class BannerComponent implements OnInit {
     if(this.firstTextIsActive){
       this.firstTextIsActive = false;
       this.secondTextIsActive = true;
-      this.thirdTextIsActive = false;
+      // this.thirdTextIsActive = false;
     
     }else if(this.secondTextIsActive){
-      this.firstTextIsActive = false;
+      this.firstTextIsActive = true;
       this.secondTextIsActive = false;
-      this.thirdTextIsActive = true;
+      // this.thirdTextIsActive = true;
       
     }else if(this.thirdTextIsActive){
       
-      this.firstTextIsActive = true;
-      this.secondTextIsActive = false;
-      this.thirdTextIsActive = false;
+      // this.firstTextIsActive = true;
+      // this.secondTextIsActive = false;
+      // this.thirdTextIsActive = false;
 
     }
   }

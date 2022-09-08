@@ -124,7 +124,7 @@ header.is-scrolling-extend .menu ul li a, header.is-scrolling .menu ul li a{
 
 .first-arc, .second-arc{
     /* background-color: yellow; */
-    border: 2px solid #0ba360;
+    border: 2px solid var(--secondary-color);
     padding: 10px;
     /* transform: scale(4); */
     position: absolute;
