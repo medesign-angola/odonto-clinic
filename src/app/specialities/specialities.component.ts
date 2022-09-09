@@ -54,8 +54,14 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
   childSlide: string = 0 + '%';
 
   ngOnInit(): void {
-
     this.childSlide = 10 + '%';
+
+    // let checkInterval = setInterval(() => {
+    //   this.checkUserPosition();
+    // }, 50)
+
+    this.getEvent();
+
   }
 
   ngAfterViewInit(): void {
@@ -107,11 +113,11 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
   checkWhoIsActive(){
     let interval = setInterval(() => {
       this.conditionsOnScroll();
-    }, 400)
+    }, 100)
 
-    setTimeout(() => {
-      clearInterval(interval);
-    }, 800)
+    // setTimeout(() => {
+    //   clearInterval(interval);
+    // }, 400)
 
     // this.checkUserPosition();
   }
@@ -125,10 +131,6 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
   @HostListener('window:wheel', ['$event'])
   listening(){
     // Validação da posição actual da lateral esquerda da tela para mobile
-
-    
-    // console.log(this.slideTotal);
-    // console.log(this.seventhBoxLeftOffset);
 
     this.conditionsOnScroll();
 
@@ -146,13 +148,6 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
         this.isNextClickable = false;
         this.isPrevClickable = true;
     }
-    // }else if(this.slideTotal > this.slideElement.nativeElement.scrollWidth ){
-    //   this.isNextClickable = false;
-    //   this.isPrevClickable = true;
-
-    // }
-
-    // this.checkUserPosition();
 
   }
 
@@ -321,7 +316,7 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
       // Para cada verificação da posição do ecrã, função para actualizar a percentagem do custom scroll
       this.checkUserPosition();
       
-    }else if(this.slideTotal >= this.ninethBoxLeftOffset && this.slideTotal < this.tenthBoxLeftOffset){
+    }else if(this.slideTotal >= this.ninethBoxLeftOffset && this.slideTotal + 60 < this.tenthBoxLeftOffset){
       
       this.isOnFirstImage = false;
       this.isOnSecondImage = false;
@@ -342,28 +337,7 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
       // Para cada verificação da posição do ecrã, função para actualizar a percentagem do custom scroll
       this.checkUserPosition();
       
-    }else if(this.slideTotal >= this.thirdBoxLeftOffset && this.slideTotal < this.fourthBoxLeftOffset){
-      
-      this.isOnFirstImage = false;
-      this.isOnSecondImage = false;
-      this.isOnThirdImage = false;
-      this.isOnFourthImage = false;
-      this.isOnFifthImage = false;
-      this.isOnSixthImage = false;
-      this.isOnSeventhImage = false;
-      this.isOnEigthImage = false;
-      this.isOnNinethImage = false;
-      this.isOnTenthImage = true;
-
-      // console.log(this.slideTotal + 2);
-      // console.log(this.fourthBoxLeftOffset);
-
-      // return;
-
-      // Para cada verificação da posição do ecrã, função para actualizar a percentagem do custom scroll
-      this.checkUserPosition();
-      
-    }else if(this.slideTotal >= this.tenthBoxLeftOffset){
+    }else if((this.slideTotal + 60) >= this.tenthBoxLeftOffset){
       
       this.isOnFirstImage = false;
       this.isOnSecondImage = false;
@@ -431,6 +405,22 @@ export class SpecialitiesComponent implements OnInit, AfterViewInit {
       // console.log("quarta imagem está activa");
 
     }
+  }
+
+  // Evento de hover nas boxes
+
+  getEvent(){
+    let elements = document.querySelectorAll<HTMLElement>('.box section');
+    
+    elements.forEach((elem: HTMLElement)=>{
+      elem.addEventListener('touchstart', ()=>{
+        elem.style.opacity = '0';
+      });
+      elem.addEventListener('touchend', ()=>{
+        elem.style.opacity = '1';
+      });
+    });
+
   }
 
 
