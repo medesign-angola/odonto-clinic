@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-about-us',
@@ -9,7 +9,14 @@ export class AboutUsComponent implements OnInit {
 
   constructor() { }
 
+  @Output() specialityButtonWasClicked = new EventEmitter<boolean>();
+
   ngOnInit(): void {
+  }
+
+  specialitiesButtonClick(){
+    this.specialityButtonWasClicked.emit(true);
+    // window.alert()
   }
 
 }

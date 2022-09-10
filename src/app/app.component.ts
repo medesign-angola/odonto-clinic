@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { Message } from './app-model';
 import { LinkOpenService } from './app-services/link-open.service';
 import { LoaderService } from './app-services/loader/loader.service';
 
@@ -28,6 +27,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   isMenuHidden:boolean = true;
 
+  
+  @ViewChild('specialities') specialities!: ElementRef;
+  specialitiesOffset: number = 0;
+
   @ViewChild('containHeader') containHeader !: ElementRef;
   containHeaderOffset: any;
 
@@ -36,6 +39,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.containHeaderOffset = this.containHeader.nativeElement.offsetTop;
+    this.specialitiesOffset = this.specialities.nativeElement.offsetTop;
   }
 
   @HostListener('window:scroll', ['$event']) checkTopOffset(){
@@ -84,6 +88,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   scrollTo(element: HTMLElement){
+    // console.log(element.offsetTop - 90);
     scrollTo(0, element.offsetTop - 90);
     
     this.menuToggle();

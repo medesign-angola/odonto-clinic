@@ -82,7 +82,7 @@
     <app-second-area></app-second-area>
   </div>
   <div class="about bg-green-5000" #about>
-    <app-about-us></app-about-us>
+    <app-about-us (specialityButtonWasClicked)="scrollTo(specialities)"></app-about-us>
   </div>
   <div class="specialities bg-green-00" #specialities>
     <app-specialities></app-specialities>
